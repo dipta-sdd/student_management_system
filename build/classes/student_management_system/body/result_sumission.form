@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <Events>
+    <EventHandler event="ancestorResized" listener="java.awt.event.HierarchyBoundsListener" parameters="java.awt.event.HierarchyEvent" handler="formAncestorResized"/>
+  </Events>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jScrollPane1" pref="960" max="32767" attributes="0"/>
+                      <Component id="jLabel1" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" pref="98" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="code_box" min="-2" pref="327" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="42" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="code_box" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jLabel2" alignment="3" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" pref="436" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="my.font" type="code"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="tittle"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="my.font" type="code"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Course:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="code_box">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="my.font" type="code"/>
+            </Property>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="Server.get_table_column_where_str1_eq_str2(&quot;course_offer&quot;, &quot;code&quot;, &quot;teacher&quot;, teacher)" type="code"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="code_boxActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
+            </Property>
+          </Properties>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="jPanel2">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                    <BevelBorder/>
+                  </Border>
+                </Property>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="19" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="jPanel3">
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="result_submission_panel1" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel3" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel2" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel4" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel5" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel9" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel10" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel6" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel8" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel7" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel11" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel13" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel12" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel14" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel15" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel19" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel20" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel16" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel18" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel17" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel21" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel23" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel22" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel24" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel25" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel29" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel30" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel26" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel28" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel27" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel31" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel33" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel32" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel34" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel35" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel39" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel40" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel36" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel38" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel37" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel41" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel43" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel42" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel44" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel45" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel49" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel50" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel46" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel48" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel47" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel51" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel53" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel52" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel54" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel55" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel59" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel60" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel56" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel58" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="result_submission_panel57" alignment="1" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="result_submission_panel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel5" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel6" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel7" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel8" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel9" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel10" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel11" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel12" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel13" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel14" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel15" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel16" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel17" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel18" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel19" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel20" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel21" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel22" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel23" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel24" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel25" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel26" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel27" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel28" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel29" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel30" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel31" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel32" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel33" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel34" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel35" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel36" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel37" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel38" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel39" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel40" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel41" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel42" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel43" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel44" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel45" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel46" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel47" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel48" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel49" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel50" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel51" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel52" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel53" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel54" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel55" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel56" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel57" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel58" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel59" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="result_submission_panel60" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel1">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel2">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel3">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel4">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel5">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel6">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel7">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel8">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel9">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel10">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel11">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel12">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel13">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel14">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel15">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel16">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel17">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel18">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel19">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel20">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel21">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel22">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel23">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel24">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel25">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel26">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel27">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel28">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel29">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel30">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel31">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel32">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel33">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel34">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel35">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel36">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel37">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel38">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel39">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel40">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel41">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel42">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel43">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel44">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel45">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel46">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel47">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel48">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel49">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel50">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel51">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel52">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel53">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel54">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel55">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel56">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel57">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel58">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel59">
+                    </Component>
+                    <Component class="student_management_system.body.result_submission_panel" name="result_submission_panel60">
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JButton" name="jButton1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jButton1"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

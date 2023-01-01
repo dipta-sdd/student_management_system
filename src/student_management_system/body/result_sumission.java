@@ -5,6 +5,7 @@
 package student_management_system.body;
 import student_management_system.Server;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import student_management_system.user;
 
 /**
  *
@@ -12,12 +13,14 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  */
 public class result_sumission extends javax.swing.JInternalFrame {
 javax.swing.JDesktopPane body;
-String teacher="psd";
+user u;
+String teacher;
 String code;
     /**
      * Creates new form menu1
      */
-    public result_sumission(javax.swing.JDesktopPane body) {
+
+    public result_sumission(javax.swing.JDesktopPane body,user u) {
         initComponents();
         this.setBorder (javax.swing.BorderFactory.createEmptyBorder(0,0,0,0)); 
         //BasicInternalFrameUI ui = 
@@ -25,17 +28,9 @@ String code;
         ui.setNorthPane (null);
         this.body=body;
         this.setSize(body.getSize());
-        System.out.println(Server.session());
-    }
-    public result_sumission(javax.swing.JDesktopPane body,String teacher) {
-        initComponents();
-        this.setBorder (javax.swing.BorderFactory.createEmptyBorder(0,0,0,0)); 
-        //BasicInternalFrameUI ui = 
-        BasicInternalFrameUI ui= (BasicInternalFrameUI)this.getUI(); 
-        ui.setNorthPane (null);
-        this.body=body;
-        this.setSize(body.getSize());
-        this.teacher=teacher;
+        this.teacher=u.user_teacher.name;
+        System.out.println(this.teacher);
+        code_box.setModel(Server.get_table_column_where_str1_eq_str2("course_offer", "code", "teacher", teacher));
     }
 
     /**
@@ -115,6 +110,7 @@ String code;
         result_submission_panel59 = new student_management_system.body.result_submission_panel();
         result_submission_panel60 = new student_management_system.body.result_submission_panel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         addHierarchyBoundsListener(new java.awt.event.HierarchyBoundsListener() {
             public void ancestorMoved(java.awt.event.HierarchyEvent evt) {
@@ -128,7 +124,8 @@ String code;
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(my.font);
-        jLabel1.setText("tittle");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Result Submission");
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(my.font);
@@ -343,7 +340,8 @@ String code;
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton1.setText("jButton1");
+        jButton1.setFont(my.font);
+        jButton1.setText("Submit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -371,6 +369,16 @@ String code;
 
         jScrollPane1.setViewportView(jPanel2);
 
+        jButton2.setText("Back");
+        jButton2.setMaximumSize(new java.awt.Dimension(83, 30));
+        jButton2.setMinimumSize(new java.awt.Dimension(83, 30));
+        jButton2.setPreferredSize(new java.awt.Dimension(83, 30));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -385,7 +393,9 @@ String code;
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(code_box, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)))
                 .addGap(0, 0, 0))
         );
         jPanel1Layout.setVerticalGroup(
@@ -394,9 +404,11 @@ String code;
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(code_box, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(code_box, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(5, 5, 5)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
@@ -426,6 +438,7 @@ String code;
     private void code_boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_code_boxActionPerformed
         // TODO add your handling code here:
         code=code_box.getSelectedItem().toString();
+        System.out.println("code: "+code);
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         String id[]=Server.get_teacher_couse_list_of_std_id(teacher, code, "CSE");
         int n=Server.get_teacher_couse_count_of_std_id(teacher, code, "CSE");
@@ -558,10 +571,17 @@ String code;
         if(n>x) result_submission_panel60.add_result(); x++;
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        body.remove(this);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> code_box;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

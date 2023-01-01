@@ -67,7 +67,7 @@ public class course {
             status=false;        
         }
     }
-    public void update()
+    public boolean update()
     {
         if(!status)
         {
@@ -86,15 +86,19 @@ public class course {
                 ps.executeUpdate();
                 System.out.println("added");
                 status = true;
+                return true;
 
             }
             catch(Exception e){
                 System.out.println("server_error");
                 status = false;
+                return false;
             }
         }
-        else
+        else{
             System.out.println("already added");
+            return true;
+        }
     }  
 }
 

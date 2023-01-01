@@ -88,8 +88,6 @@ javax.swing.JButton menu;
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("For more info visit: www.neub.com");
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/student_management_system/icon/logo.png"))); // NOI18N
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -98,8 +96,8 @@ javax.swing.JButton menu;
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 456, Short.MAX_VALUE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE))
                 .addGap(24, 24, 24))
         );
         jPanel2Layout.setVerticalGroup(
@@ -145,6 +143,11 @@ javax.swing.JButton menu;
 
         jButton1.setFont(jLabel6.getFont());
         jButton1.setText("Sign up");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         pass.setFont(jLabel6.getFont());
         pass.addActionListener(new java.awt.event.ActionListener() {
@@ -279,10 +282,22 @@ javax.swing.JButton menu;
         if(!user.getText().isEmpty() && !pass.getText().isEmpty()){
             u=Server.login(user.getText(),pass.getText());
             System.out.println(u.type);
+            if(u.type.equals("teacher")){
+                welcome_teacher obj= new welcome_teacher(body,u);
+                body.removeAll();
+                body.add(obj).setVisible(true);
+                menu.setVisible(true);
+            }
+            else if(u.type.equals("student")){
+                welcome_student obj= new welcome_student(body,u);
+                body.removeAll();
+                body.add(obj).setVisible(true);
+                menu.setVisible(true);
+            }
         }
         else
             System.out.println("null");
-        
+       
         /*if(Server.admin_login(user.getText(),pass.getText()))
         {
             menu_frame obj= new menu_frame(body);
@@ -297,6 +312,13 @@ javax.swing.JButton menu;
         jButton2ActionPerformed(evt);
         
     }//GEN-LAST:event_passActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        add_teacher obj= new add_teacher(body);
+        body.add(obj).setVisible(true);
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
     static boolean admin_login(String user, String pass)
     {
                 String username,password;

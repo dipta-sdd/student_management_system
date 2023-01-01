@@ -28,6 +28,7 @@ import student_management_system.body.studentlist;
  */
 public class menu extends javax.swing.JFrame {
     boolean m=false;
+    user u;
         
     /**
      * Creates new form menu
@@ -35,7 +36,6 @@ public class menu extends javax.swing.JFrame {
     public menu() {
         initComponents();
         //result_sumission home= new result_sumission(body);
-        user u=null;
         Login home= new Login(body,menu_button,u);
         body.removeAll();
         body.add(home).setVisible(true);
@@ -43,7 +43,7 @@ public class menu extends javax.swing.JFrame {
         ////////////
         option2.setText("Student");
         option3.setText("Course Offer");
-        option4.setText("Course");
+        option4.setText("Add Course");
         option5.setText("");
         option6.setText("");
         option7.setText("");
@@ -211,6 +211,9 @@ public class menu extends javax.swing.JFrame {
         });
 
         option4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                option4MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 option4MouseEntered(evt);
             }
@@ -220,6 +223,9 @@ public class menu extends javax.swing.JFrame {
         });
 
         option5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                option5MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 option5MouseEntered(evt);
             }
@@ -439,6 +445,16 @@ public class menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         body.add(new course_offer(body)).setVisible(true);
     }//GEN-LAST:event_option3MouseClicked
+
+    private void option4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option4MouseClicked
+        // TODO add your handling code here:
+        body.add(new add_course(body,u)).setVisible(true);
+    }//GEN-LAST:event_option4MouseClicked
+
+    private void option5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option5MouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_option5MouseClicked
 
 
     void student_list()

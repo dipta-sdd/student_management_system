@@ -21,13 +21,14 @@ course crs;
     }
     void update_id(String id,String code){
         this.id.setText(id);
-        std.update_id(id);
+        std=new student (id);
         crs=new course(code);
         name.setText(std.name);
         this.setVisible(true);
     }
     public void add_result(){
-        std.add_result(crs,result.getText());
+        System.out.println("calling add_result for id  "+std.id );
+        std.add_result(crs,result.getText(),std.id);
     }
 
     /**

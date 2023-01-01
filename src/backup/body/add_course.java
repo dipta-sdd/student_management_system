@@ -7,6 +7,7 @@ package backup.body;
 import student_management_system.body.*;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import student_management_system.course;
+import student_management_system.user;
 
 /**
  *
@@ -14,18 +15,20 @@ import student_management_system.course;
  */
 public class add_course extends javax.swing.JInternalFrame {
 javax.swing.JDesktopPane body;
+user u;
+
     /**
      * Creates new form menu1
      */
-    public add_course(javax.swing.JDesktopPane body) {
+    public add_course(javax.swing.JDesktopPane body,user u) {
         initComponents();
         this.setBorder (javax.swing.BorderFactory.createEmptyBorder(0,0,0,0)); 
         //BasicInternalFrameUI ui = 
         BasicInternalFrameUI ui= (BasicInternalFrameUI)this.getUI(); 
         ui.setNorthPane (null);
         this.body=body;
-        
         this.setSize(body.getSize());
+        this.u=u;
     }
 
     /**
@@ -56,9 +59,9 @@ javax.swing.JDesktopPane body;
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Submit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

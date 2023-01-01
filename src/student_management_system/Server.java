@@ -174,6 +174,7 @@ public class Server {
             ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
             StatementImpl st= (StatementImpl)conn.createStatement();
             String sql="select count(*) from "+table+" where "+str1+"='"+str2+"'";
+            System.out.println(sql);
             ResultSet rs=st.executeQuery(sql);
             //while(rs.next()){ // no need while loop cause there are condition in query username='user' 
             rs.next();
@@ -389,6 +390,37 @@ public class Server {
             return (rs.getString("session"));        
         }
         catch(Exception e){
+            return "";
+        }
+    }
+    public static String sessionToSemester(String session) {
+        System.out.println("sessionToSemester");
+        int s_id_current=0,s_id_tofind,s_id_sem;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
+            StatementImpl st= (StatementImpl)conn.createStatement();
+            String sql="select * from session";//select * from admin where username='sdd'
+            System.out.println("sql1  "+sql);
+            ResultSet rs=st.executeQuery(sql);
+            while(rs.next())
+                s_id_current=rs.getInt("id");
+            System.out.println("session id current  "+s_id_current);
+            sql="select * from session where session='"+session+"'";
+            System.out.println(sql );
+            rs=st.executeQuery(sql);
+            rs.next();
+            s_id_tofind=rs.getInt("id");
+            System.out.println("session id to find  "+s_id_tofind);
+            s_id_sem=s_id_tofind-s_id_current+1;
+            sql="select * from semester where id='"+s_id_sem+"'";
+            System.out.println(sql);
+             rs=st.executeQuery(sql);System.out.println(sql);
+             rs.next();
+             return rs.getString("semester");
+        }
+        catch(Exception e){
+            System.out.println(e);
             return "";
         }
     }

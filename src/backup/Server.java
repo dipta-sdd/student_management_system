@@ -175,6 +175,7 @@ public class Server {
             ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
             StatementImpl st= (StatementImpl)conn.createStatement();
             String sql="select count(*) from "+table+" where "+str1+"='"+str2+"'";
+            System.out.println(sql);
             ResultSet rs=st.executeQuery(sql);
             //while(rs.next()){ // no need while loop cause there are condition in query username='user' 
             rs.next();
@@ -393,6 +394,37 @@ public class Server {
             return "";
         }
     }
+    public static String sessionToSemester(String session) {
+        System.out.println("sessionToSemester");
+        int s_id_current=0,s_id_tofind,s_id_sem;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
+            StatementImpl st= (StatementImpl)conn.createStatement();
+            String sql="select * from session";//select * from admin where username='sdd'
+            System.out.println("sql1  "+sql);
+            ResultSet rs=st.executeQuery(sql);
+            while(rs.next())
+                s_id_current=rs.getInt("id");
+            System.out.println("session id current  "+s_id_current);
+            sql="select * from session where session='"+session+"'";
+            System.out.println(sql );
+            rs=st.executeQuery(sql);
+            rs.next();
+            s_id_tofind=rs.getInt("id");
+            System.out.println("session id to find  "+s_id_tofind);
+            s_id_sem=s_id_tofind-s_id_current+1;
+            sql="select * from semester where id='"+s_id_sem+"'";
+            System.out.println(sql);
+             rs=st.executeQuery(sql);System.out.println(sql);
+             rs.next();
+             return rs.getString("semester");
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return "";
+        }
+    }
     public static boolean admin_login_admin(String user, String pass){
                 String username,password;
         try{
@@ -417,29 +449,39 @@ public class Server {
         }
     }
     public static teacher admin_login_teacher(String user, String pass){
-                teacher t=new teacher();
-                t.status=false;
+        System.out.println("entering admin login teacher");
+        teacher t=new teacher();
+        t.status=false;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
             StatementImpl st= (StatementImpl)conn.createStatement();
             String sql="select * from teacher where username='" + user +"'";//select * from admin where username='sdd'
             ResultSet rs=st.executeQuery(sql);
-            //System.out.println(sql);
+            System.out.println(sql);
             rs.next();
             t.name=rs.getString("name");
+            System.out.println("name "+t.name);
             t.username=rs.getString("username");
+            System.out.println("user "+t.username);
             t.password= rs.getString("password");
+            System.out.println("pass "+t.password);
             t.dept=rs.getString("dept");
+            System.out.println("dept "+t.dept);
             t.mobile=rs.getString("mobile");
+            System.out.println("mbl "+t.mobile);
             t.email=rs.getString("email");
+            System.out.println("email "+t.mobile);
             t.address=rs.getString("address");
+            System.out.println("address "+t.address);
             if(user.equals(t.username) && pass.equals(t.password))
                 t.status=true;
+            System.out.println("returning true");
                 return t;
         }
         catch(Exception e){
             t.status=false;
+            System.out.println("returning false");
             return t;       
         }
     }

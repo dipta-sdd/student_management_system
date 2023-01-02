@@ -18,13 +18,15 @@ public class add_course_panel extends javax.swing.JPanel {
     /** Creates new form add_course_panel */
     public add_course_panel() {
         initComponents();
+        led.setSelected(false);
     }
     public void update(){
         crs.code=code.getText();
         crs.tittle=tittle.getText();
         crs.credit=credit.getText();
         crs.dept=dept.getSelectedItem().toString();
-        crs.update();
+        led.setSelected(crs.update());
+        
     }
 
     /** This method is called from within the constructor to
@@ -36,6 +38,8 @@ public class add_course_panel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
         code = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -44,6 +48,11 @@ public class add_course_panel extends javax.swing.JPanel {
         tittle = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         dept = new javax.swing.JComboBox<>();
+        led = new javax.swing.JRadioButton();
+
+        jRadioButton1.setText("jRadioButton1");
+
+        jRadioButton2.setText("jRadioButton2");
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -66,12 +75,26 @@ public class add_course_panel extends javax.swing.JPanel {
         jLabel3.setText("Credit :");
 
         tittle.setFont(my.font);
+        tittle.setMinimumSize(new java.awt.Dimension(64, 200));
+        tittle.setPreferredSize(new java.awt.Dimension(64, 200));
 
         jLabel4.setFont(my.font);
         jLabel4.setText("Code :");
 
         dept.setFont(my.font);
         dept.setModel(Server.get_dept_list());
+        dept.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deptActionPerformed(evt);
+            }
+        });
+
+        led.setBackground(new java.awt.Color(255, 255, 255));
+        led.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ledActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -81,11 +104,11 @@ public class add_course_panel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(code, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(code, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tittle, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+                .addComponent(tittle, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -94,14 +117,17 @@ public class add_course_panel extends javax.swing.JPanel {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(dept, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(led)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(led, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(code, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -123,8 +149,17 @@ public class add_course_panel extends javax.swing.JPanel {
             tittle.setText(crs.tittle);
             credit.setText(crs.credit);
             dept.setToolTipText(crs.dept);
+            led.setSelected(true);
         }
     }//GEN-LAST:event_codeCaretUpdate
+
+    private void deptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deptActionPerformed
+
+    private void ledActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ledActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ledActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -135,6 +170,9 @@ public class add_course_panel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton led;
     private javax.swing.JTextField tittle;
     // End of variables declaration//GEN-END:variables
 

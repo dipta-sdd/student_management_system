@@ -29,31 +29,42 @@ import student_management_system.body.studentlist;
  */
 public class menu extends javax.swing.JFrame {
     boolean m=false;
-    user u;
+    user u=new user();
         
     /**
      * Creates new form menu
      */
     public menu() {
         initComponents();
-        //result_sumission home= new result_sumission(body);
-        Login home= new Login(body,menu_button,u);
-        body.removeAll();
-        body.add(home).setVisible(true);
+        //result_sumission home= new result_sumission(jPanel2);
+        Login home= new Login(jPanel2,menu_button,u,menu_open,menu_open1);
+        jPanel2.removeAll();
+        jPanel2.add(home).setVisible(true);
         menu_hide();
+        menu_open.setVisible(false);
+        menu_open1.setVisible(false);
         ////////////
         option2.setText("Student");
         option3.setText("Course Offer");
         option4.setText("Add Course");
-        option5.setText("");
+        option5.setText("Logout");
         option6.setText("");
         option7.setText("");
         option8.setText("");
+        option9.setText("Student");
+        option10.setText("");
+        option11.setText("");
+        option12.setText("Logout");
+        option13.setText("");
+        option14.setText("");
+        option15.setText("");
         menu_button.setVisible(false);
     }
     void menu_hide()
     {
-        menu_body.setVisible(false);
+        menu_bPane.setVisible(false);
+//        menu_open.setVisible(false);
+//        menu_open1.setVisible(false);
     }
     
 
@@ -66,18 +77,18 @@ public class menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        popup = new javax.swing.JPopupMenu();
-        student = new javax.swing.JMenuItem();
-        department = new javax.swing.JMenuItem();
-        add_course = new javax.swing.JMenuItem();
-        course_offer = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        menu_button = new javax.swing.JButton();
-        body = new javax.swing.JDesktopPane();
-        menu_body = new javax.swing.JPanel();
-        menu_open = new javax.swing.JPanel();
+        popup = new JPopupMenu();
+        student = new JMenuItem();
+        department = new JMenuItem();
+        add_course = new JMenuItem();
+        course_offer = new JMenuItem();
+        jMenuItem5 = new JMenuItem();
+        jPanel5 = new JPanel();
+        jLabel2 = new JLabel();
+        menu_button = new JButton();
+        jPanel2 = new JDesktopPane();
+        menu_bPane = new JPanel();
+        menu_open = new JPanel();
         option2 = new student_management_system.option();
         option3 = new student_management_system.option();
         option4 = new student_management_system.option();
@@ -85,7 +96,16 @@ public class menu extends javax.swing.JFrame {
         option6 = new student_management_system.option();
         option7 = new student_management_system.option();
         option8 = new student_management_system.option();
-        jButton2 = new javax.swing.JButton();
+        jButton2 = new JButton();
+        menu_open1 = new JPanel();
+        option9 = new student_management_system.option();
+        option10 = new student_management_system.option();
+        option11 = new student_management_system.option();
+        option12 = new student_management_system.option();
+        option13 = new student_management_system.option();
+        option14 = new student_management_system.option();
+        option15 = new student_management_system.option();
+        jPanel2 = new JButton();
 
         student.setText("jMenuItem1");
         student.addActionListener(new java.awt.event.ActionListener() {
@@ -112,13 +132,14 @@ public class menu extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setSize(new java.awt.Dimension(1000, 0));
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBackground(new java.awt.Color(51, 204, 255));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Monospaced", 1, 36)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Monospaced", 1, 36));  
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("North East University Bangladesh");
 
+        menu_button.setBackground(new java.awt.Color(153, 153, 255));
         menu_button.setFont(my.font);
         menu_button.setText("MENU");
         menu_button.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -135,7 +156,7 @@ public class menu extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        javax.swing.GroupLayout jPanel5Layout = new GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,25 +178,25 @@ public class menu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        body.setBackground(new java.awt.Color(153, 153, 255));
-        body.addComponentListener(new java.awt.event.ComponentAdapter() {
+        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel2.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentResized(java.awt.event.ComponentEvent evt) {
-                bodyComponentResized(evt);
+                jPanel2ComponentResized(evt);
             }
         });
 
-        javax.swing.GroupLayout bodyLayout = new javax.swing.GroupLayout(body);
-        body.setLayout(bodyLayout);
-        bodyLayout.setHorizontalGroup(
-            bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1018, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel2Layout = new GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        bodyLayout.setVerticalGroup(
-            bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        menu_body.setBackground(menu_open.getBackground());
+        menu_bPane.setBackground(menu_open.getBackground());
 
         menu_open.setBackground(new java.awt.Color(0, 153, 153));
         menu_open.setMaximumSize(new java.awt.Dimension(180, 50));
@@ -262,7 +283,7 @@ public class menu extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout menu_openLayout = new javax.swing.GroupLayout(menu_open);
+        javax.swing.GroupLayout menu_openLayout = new GroupLayout(menu_open);
         menu_open.setLayout(menu_openLayout);
         menu_openLayout.setHorizontalGroup(
             menu_openLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,31 +321,160 @@ public class menu extends javax.swing.JFrame {
                 .addComponent(option7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(option8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        menu_open1.setBackground(new java.awt.Color(0, 153, 153));
+        menu_open1.setMaximumSize(new java.awt.Dimension(180, 50));
+        menu_open1.setMinimumSize(new java.awt.Dimension(1, 1));
+        menu_open1.setPreferredSize(new java.awt.Dimension(180, 422));
+        menu_open1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menu_open1MouseEntered(evt);
+            }
+        });
+
+        option9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                option9MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                option9MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                option9MouseExited(evt);
+            }
+        });
+
+        option10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                option10MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                option10MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                option10MouseExited(evt);
+            }
+        });
+
+        option11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                option11MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                option11MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                option11MouseExited(evt);
+            }
+        });
+
+        option12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                option12MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                option12MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                option12MouseExited(evt);
+            }
+        });
+
+        option13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                option13MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                option13MouseExited(evt);
+            }
+        });
+
+        option14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                option14MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                option14MouseExited(evt);
+            }
+        });
+
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel2.setFont(my.font);
+        jPanel2.setText("Hide");
+        jPanel2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPanel2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout menu_open1Layout = new GroupLayout(menu_open1);
+        menu_open1.setLayout(menu_open1Layout);
+        menu_open1Layout.setHorizontalGroup(
+            menu_open1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menu_open1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(menu_open1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(option9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(option10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(option11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(option12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(option13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(option14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(option15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(menu_open1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        menu_open1Layout.setVerticalGroup(
+            menu_open1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menu_open1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(option9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(option10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(option11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(option12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(option13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(option14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(option15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(265, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout menu_bodyLayout = new javax.swing.GroupLayout(menu_body);
-        menu_body.setLayout(menu_bodyLayout);
-        menu_bodyLayout.setHorizontalGroup(
-            menu_bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menu_bodyLayout.createSequentialGroup()
+        javax.swing.GroupLayout menu_bPaneLayout = new GroupLayout(menu_bPane);
+        menu_bPane.setLayout(menu_bPaneLayout);
+        menu_bPaneLayout.setHorizontalGroup(
+            menu_bPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menu_bPaneLayout.createSequentialGroup()
                 .addComponent(menu_open, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(menu_open1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(9, 9, 9))
         );
-        menu_bodyLayout.setVerticalGroup(
-            menu_bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        menu_bPaneLayout.setVerticalGroup(
+            menu_bPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(menu_open1, javax.swing.GroupLayout.DEFAULT_SIZE, 726, Short.MAX_VALUE)
             .addComponent(menu_open, javax.swing.GroupLayout.DEFAULT_SIZE, 726, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        javax.swing.GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                .addComponent(menu_body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addComponent(menu_bPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(body)
+                    .addComponent(jPanel2)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -332,9 +482,9 @@ public class menu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(body)
+                .addComponent(jPanel2)
                 .addContainerGap())
-            .addComponent(menu_body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(menu_bPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -345,9 +495,9 @@ public class menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_studentActionPerformed
 
-    private void bodyComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_bodyComponentResized
+    private void jPanel2ComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanel2ComponentResized
         // TODO add your handling code here:
-    }//GEN-LAST:event_bodyComponentResized
+    }//GEN-LAST:event_jPanel2ComponentResized
 
     private void menu_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_buttonMouseEntered
 
@@ -358,112 +508,205 @@ public class menu extends javax.swing.JFrame {
             // TODO add your handling code here:
     }//GEN-LAST:event_menu_buttonMouseExited
 
+    private void menu_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_buttonActionPerformed
+        // TODO add your handling code here:
+        menu_button.setVisible(false);
+        menu_bPane.setVisible(true);
+        System.out.println("............"+u.type);
+        //System.out.println("............"+this.u.type);
+        
+//        if(u.type.equals("teacher")){
+//            menu_open.setVisible(true);
+//        } else 
+//        if(u.type.equals("student")){
+//            menu_open1.setVisible(true);
+//        }
+    }//GEN-LAST:event_menu_buttonActionPerformed
+
     private void menu_openMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_openMouseEntered
         // TODO add your handling code here:
         System.out.println("2");
         m=true;
-        menu_body.setVisible(true);
+        menu_bPane.setVisible(true);
     }//GEN-LAST:event_menu_openMouseEntered
 
-    private void menu_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_buttonActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        menu_button.setVisible(false);
-        menu_body.setVisible(true);
-    }//GEN-LAST:event_menu_buttonActionPerformed
-
-    private void option2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option2MouseEntered
-        // TODO add your handling code here:
-        option2.setBackground(Color.BLUE);
-    }//GEN-LAST:event_option2MouseEntered
-
-    private void option2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option2MouseExited
-        // TODO add your handling code here:
-        option2.setBackground(menu_open.getBackground());
-    }//GEN-LAST:event_option2MouseExited
-
-    private void option3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option3MouseEntered
-        // TODO add your handling code here:
-        option3.setBackground(Color.BLUE);
-    }//GEN-LAST:event_option3MouseEntered
-
-    private void option3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option3MouseExited
-        // TODO add your handling code here:
-        option3.setBackground(menu_open.getBackground());
-    }//GEN-LAST:event_option3MouseExited
-
-    private void option4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option4MouseEntered
-        // TODO add your handling code here:
-        option4.setBackground(Color.BLUE);
-    }//GEN-LAST:event_option4MouseEntered
-
-    private void option4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option4MouseExited
-        // TODO add your handling code here:
-        option4.setBackground(menu_open.getBackground());
-    }//GEN-LAST:event_option4MouseExited
-
-    private void option5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option5MouseEntered
-        // TODO add your handling code here:
-        option5.setBackground(Color.BLUE);
-    }//GEN-LAST:event_option5MouseEntered
-
-    private void option5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option5MouseExited
-        // TODO add your handling code here:
-        option5.setBackground(menu_open.getBackground());
-    }//GEN-LAST:event_option5MouseExited
-
-    private void option6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option6MouseEntered
-        // TODO add your handling code here:
-        option6.setBackground(Color.BLUE);
-    }//GEN-LAST:event_option6MouseEntered
-
-    private void option6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option6MouseExited
-        // TODO add your handling code here:
-        option6.setBackground(menu_open.getBackground());
-    }//GEN-LAST:event_option6MouseExited
-
-    private void option7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option7MouseEntered
-        // TODO add your handling code here:
-        option7.setBackground(Color.BLUE);
-    }//GEN-LAST:event_option7MouseEntered
+        menu_bPane.setVisible(false);
+        menu_button.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void option7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option7MouseExited
         // TODO add your handling code here:
         option7.setBackground(menu_open.getBackground());
     }//GEN-LAST:event_option7MouseExited
 
-    private void option2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option2MouseClicked
+    private void option7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option7MouseEntered
         // TODO add your handling code here:
-        body.add(new studentlist(body)).setVisible(true);
-    }//GEN-LAST:event_option2MouseClicked
+        option7.setBackground(Color.BLUE);
+    }//GEN-LAST:event_option7MouseEntered
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void option6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option6MouseExited
         // TODO add your handling code here:
-        menu_body.setVisible(false);
-        menu_button.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+        option6.setBackground(menu_open.getBackground());
+    }//GEN-LAST:event_option6MouseExited
 
-    private void option3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option3MouseClicked
+    private void option6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option6MouseEntered
         // TODO add your handling code here:
-        body.add(new course_offer(body)).setVisible(true);
-    }//GEN-LAST:event_option3MouseClicked
+        option6.setBackground(Color.BLUE);
+    }//GEN-LAST:event_option6MouseEntered
 
-    private void option4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option4MouseClicked
+    private void option5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option5MouseExited
         // TODO add your handling code here:
-        body.add(new add_course(body,u)).setVisible(true);
-    }//GEN-LAST:event_option4MouseClicked
+        option5.setBackground(menu_open.getBackground());
+    }//GEN-LAST:event_option5MouseExited
+
+    private void option5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option5MouseEntered
+        // TODO add your handling code here:
+        option5.setBackground(Color.BLUE);
+    }//GEN-LAST:event_option5MouseEntered
 
     private void option5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option5MouseClicked
         // TODO add your handling code here:
-        
+        Login obj=new Login(jPanel2,menu_button,u,menu_open,menu_open1);
+        jPanel2.removeAll();
+        menu_hide();
+        jPanel2.add(obj).setVisible(true);
     }//GEN-LAST:event_option5MouseClicked
 
+    private void option4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option4MouseExited
+        // TODO add your handling code here:
+        option4.setBackground(menu_open.getBackground());
+    }//GEN-LAST:event_option4MouseExited
 
-    void student_list()
-    {
-        studentlist std = new studentlist(body);
-        body.removeAll();
-        body.add(std).setVisible(true);
-    }
+    private void option4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option4MouseEntered
+        // TODO add your handling code here:
+        option4.setBackground(Color.BLUE);
+    }//GEN-LAST:event_option4MouseEntered
+
+    private void option4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option4MouseClicked
+        // TODO add your handling code here:
+        jPanel2.add(new add_course(jPanel2,u)).setVisible(true);
+    }//GEN-LAST:event_option4MouseClicked
+
+    private void option3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option3MouseExited
+        // TODO add your handling code here:
+        option3.setBackground(menu_open.getBackground());
+    }//GEN-LAST:event_option3MouseExited
+
+    private void option3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option3MouseEntered
+        // TODO add your handling code here:
+        option3.setBackground(Color.BLUE);
+    }//GEN-LAST:event_option3MouseEntered
+
+    private void option3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option3MouseClicked
+        // TODO add your handling code here:
+        jPanel2.add(new course_offer(jPanel2,u)).setVisible(true);
+    }//GEN-LAST:event_option3MouseClicked
+
+    private void option2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option2MouseExited
+        // TODO add your handling code here:
+        option2.setBackground(menu_open.getBackground());
+    }//GEN-LAST:event_option2MouseExited
+
+    private void option2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option2MouseEntered
+        // TODO add your handling code here:
+        option2.setBackground(Color.BLUE);
+    }//GEN-LAST:event_option2MouseEntered
+
+    private void option2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option2MouseClicked
+        // TODO add your handling code here:
+        jPanel2.add(new studentlist(jPanel2,u)).setVisible(true);
+    }//GEN-LAST:event_option2MouseClicked
+
+    private void option9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option9MouseClicked
+        // TODO add your handling code here:
+        jPanel2.add(new studentlist(jPanel2,u)).setVisible(true);
+    }//GEN-LAST:event_option9MouseClicked
+
+    private void option9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option9MouseEntered
+        // TODO add your handling code here:
+        option9.setBackground(Color.BLUE);
+    }//GEN-LAST:event_option9MouseEntered
+
+    private void option9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option9MouseExited
+        // TODO add your handling code here:
+        option9.setBackground(menu_open.getBackground());
+    }//GEN-LAST:event_option9MouseExited
+
+    private void option10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option10MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_option10MouseClicked
+
+    private void option10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option10MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_option10MouseEntered
+
+    private void option10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option10MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_option10MouseExited
+
+    private void option11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option11MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_option11MouseClicked
+
+    private void option11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option11MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_option11MouseEntered
+
+    private void option11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option11MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_option11MouseExited
+
+    private void option12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option12MouseClicked
+        // TODO add your handling code here:
+        Login obj=new Login(jPanel2,menu_button,u,menu_open,menu_open1);
+        jPanel2.removeAll();
+        menu_hide();
+        jPanel2.add(obj).setVisible(true);
+    }//GEN-LAST:event_option12MouseClicked
+
+    private void option12MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option12MouseEntered
+        // TODO add your handling code here:
+        option12.setBackground(Color.BLUE);
+    }//GEN-LAST:event_option12MouseEntered
+
+    private void option12MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option12MouseExited
+        // TODO add your handling code here:
+        option12.setBackground(menu_open.getBackground());
+    }//GEN-LAST:event_option12MouseExited
+
+    private void option13MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option13MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_option13MouseEntered
+
+    private void option13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option13MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_option13MouseExited
+
+    private void option14MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option14MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_option14MouseEntered
+
+    private void option14MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option14MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_option14MouseExited
+
+    private void jPanel2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPanel2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel2ActionPerformed
+
+    private void menu_open1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_open1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menu_open1MouseEntered
+
+
+//    void student_list()
+//    {
+//        login std = new login(jPanel2);
+//        jPanel2.removeAll();
+//        jPanel2.add(std).setVisible(true);
+//    }
     /**
      * @param args the command line arguments
      */
@@ -508,16 +751,24 @@ public class menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem add_course;
-    public static javax.swing.JDesktopPane body;
+    public static javax.swing.JDesktopPane bPane;
     private javax.swing.JMenuItem course_offer;
     private javax.swing.JMenuItem department;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel2;
+    JButton jButton2;
+    JButton jPanel2;
+    JLabel jLabel2;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel menu_body;
-    private javax.swing.JButton menu_button;
-    private javax.swing.JPanel menu_open;
+    JPanel jPanel5;
+    JPanel menu_bPane;
+    JButton menu_button;
+    JPanel menu_open;
+    JPanel menu_open1;
+    private student_management_system.option option10;
+    private student_management_system.option option11;
+    private student_management_system.option option12;
+    private student_management_system.option option13;
+    private student_management_system.option option14;
+    private student_management_system.option option15;
     private student_management_system.option option2;
     private student_management_system.option option3;
     private student_management_system.option option4;
@@ -525,6 +776,7 @@ public class menu extends javax.swing.JFrame {
     private student_management_system.option option6;
     private student_management_system.option option7;
     private student_management_system.option option8;
+    private student_management_system.option option9;
     private javax.swing.JPopupMenu popup;
     private javax.swing.JMenuItem student;
     // End of variables declaration//GEN-END:variables

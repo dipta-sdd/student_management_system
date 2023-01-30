@@ -1,13 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
-package student_management_system.body;
 
+
+
+
+package student_management_system.body; 
+
+import javax.swing.*;
 import java.awt.Color;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import student_management_system.Server;
 import student_management_system.student;
+
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 
     
     
@@ -16,21 +19,21 @@ import student_management_system.student;
  * @author sdddd
  */
 public class add_student extends javax.swing.JInternalFrame {
-javax.swing.JDesktopPane body;
+javax.swing.JDesktopPane bPane;
 private int x=80;
 private int y=70;
     /**
      * Creates new form menu1
      */
-    public add_student(javax.swing.JDesktopPane body) {
+    public add_student(javax.swing.JDesktopPane bPane) {
         initComponents();
         set_font();
         this.setBorder (javax.swing.BorderFactory.createEmptyBorder(0,0,0,0)); 
         //BasicInternalFrameUI ui = 
         BasicInternalFrameUI ui= (BasicInternalFrameUI)this.getUI(); 
         ui.setNorthPane (null);
-        this.body=body;
-        this.setSize(body.getSize());
+        this.bPane=bPane;
+        this.setSize(bPane.getSize());
     }
     private void set_font()
     {
@@ -274,7 +277,7 @@ private int y=70;
         password.setFont(my.font);
         password.setForeground(new java.awt.Color(102, 102, 255));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        javax.swing.GroupLayout jPanel3Layout = new GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -317,7 +320,8 @@ private int y=70;
         });
 
         jButton2.setFont(my.font);
-        jButton2.setText("Not a Student (teacher)");
+        jButton2.setForeground(new java.awt.Color(255, 51, 102));
+        jButton2.setText("Not a Student ");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -335,7 +339,7 @@ private int y=70;
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(100, 100, 100)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
@@ -372,13 +376,17 @@ private int y=70;
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -386,7 +394,7 @@ private int y=70;
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        javax.swing.GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -404,7 +412,7 @@ private int y=70;
 
     private void formAncestorResized(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_formAncestorResized
         // TODO add your handling code here:
-        this.setSize(body.getSize());
+        this.setSize(bPane.getSize());
     }//GEN-LAST:event_formAncestorResized
 
     private void add_std_idCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_add_std_idCaretUpdate
@@ -460,8 +468,8 @@ private int y=70;
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        add_teacher obj=new add_teacher(body ); 
-        body.add(obj).setVisible(true);
+        add_teacher obj=new add_teacher(bPane ); 
+        bPane.add(obj).setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

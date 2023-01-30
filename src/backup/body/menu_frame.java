@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-package backup.body;
+package backup.jPanel2;
 
 import student_management_system.body.*;
 import com.mysql.cj.jdbc.ConnectionImpl;
@@ -11,7 +11,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import student_management_system.Server;
-//import static student_management_system.menu.body;
+//import static student_management_system.menu.jPanel2;
 
 
 /**
@@ -19,19 +19,19 @@ import student_management_system.Server;
  * @author sdddd
  */
 public class menu_frame extends javax.swing.JInternalFrame {
-    javax.swing.JDesktopPane body;
+    javax.swing.JDesktopPane bPane;
     
     /**
      * Creates new form menu1
      */
-    public menu_frame(javax.swing.JDesktopPane body) {
+    public menu_frame(javax.swing.JDesktopPane bPane) {
         initComponents();
         this.setBorder (javax.swing.BorderFactory.createEmptyBorder(0,0,0,0)); 
         //BasicInternalFrameUI ui = 
         BasicInternalFrameUI ui= (BasicInternalFrameUI)this.getUI(); 
         ui.setNorthPane (null);
-        this.body=body;
-        this.setSize(body.getSize());
+        this.bPane=bPane;
+        this.setSize(bPane.getSize());
         System.out.println(this.getSize());
      
         
@@ -47,19 +47,19 @@ public class menu_frame extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel4 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        labal_student = new javax.swing.JLabel();
-        labal_student_count = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        labal_Department = new javax.swing.JLabel();
-        labal_student_count1 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel4 = new JPanel();
+        jPanel7 = new JPanel();
+        labal_student = new JLabel();
+        labal_student_count = new JLabel();
+        jPanel8 = new JPanel();
+        labal_Department = new JLabel();
+        labal_student_count1 = new JLabel();
+        jPanel9 = new JPanel();
+        jLabel1 = new JLabel();
 
         setBackground(new java.awt.Color(51, 0, 204));
         setPreferredSize(new java.awt.Dimension(820, 490));
-        addAncestorListener(new javax.swing.event.AncestorListener() {
+        addAncestorListener(new event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
@@ -94,7 +94,7 @@ public class menu_frame extends javax.swing.JInternalFrame {
             }
         });
 
-        labal_student.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        labal_student.setFont(new java.awt.Font("Consolas", 1, 24));  
         labal_student.setForeground(new java.awt.Color(255, 255, 255));
         labal_student.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labal_student.setText("Students");
@@ -105,7 +105,7 @@ public class menu_frame extends javax.swing.JInternalFrame {
         labal_student_count.setText(Server.get_std_count());
         labal_student_count.setPreferredSize(new java.awt.Dimension(104, 29));
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        javax.swing.GroupLayout jPanel7Layout = new GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,7 +140,7 @@ public class menu_frame extends javax.swing.JInternalFrame {
         labal_student_count1.setText(Server.get_dept_count());
         labal_student_count1.setPreferredSize(new java.awt.Dimension(104, 29));
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        javax.swing.GroupLayout jPanel8Layout = new GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,7 +169,7 @@ public class menu_frame extends javax.swing.JInternalFrame {
         jLabel1.setText(".......");
         jLabel1.setPreferredSize(new java.awt.Dimension(104, 29));
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        javax.swing.GroupLayout jPanel9Layout = new GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,7 +183,7 @@ public class menu_frame extends javax.swing.JInternalFrame {
                 .addGap(28, 28, 28))
         );
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        javax.swing.GroupLayout jPanel4Layout = new GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,7 +207,7 @@ public class menu_frame extends javax.swing.JInternalFrame {
                 .addGap(184, 184, 184))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        javax.swing.GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,7 +218,7 @@ public class menu_frame extends javax.swing.JInternalFrame {
             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 454, Short.MAX_VALUE)
         );
 
-        getAccessibleContext().setAccessibleParent(body);
+        getAccessibleContext().setAccessibleParent(jPanel2);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -226,8 +226,8 @@ public class menu_frame extends javax.swing.JInternalFrame {
     private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
         // TODO add your handling code here:
 
-        studentlist std=new studentlist(body);
-        body.add(std).setVisible(true);
+//        studentlist std=new studentlist(jPanel2);
+//        jPanel2.add(std).setVisible(true);
     
     }//GEN-LAST:event_jPanel7MouseClicked
 
@@ -243,20 +243,20 @@ public class menu_frame extends javax.swing.JInternalFrame {
     private void formAncestorResized(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_formAncestorResized
         // TODO add your handling code here:
         
-        this.setSize(body.getSize());
+        this.setSize(bPane.getSize());
         System.out.println(this.getSize());
     }//GEN-LAST:event_formAncestorResized
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JLabel labal_Department;
-    private javax.swing.JLabel labal_student;
-    private javax.swing.JLabel labal_student_count;
-    private javax.swing.JLabel labal_student_count1;
+    JLabel jLabel1;
+    JPanel jPanel4;
+    JPanel jPanel7;
+    JPanel jPanel8;
+    JPanel jPanel9;
+    JLabel labal_Department;
+    JLabel labal_student;
+    JLabel labal_student_count;
+    JLabel labal_student_count1;
     // End of variables declaration//GEN-END:variables
 }

@@ -59,41 +59,41 @@ public class main_menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        main_menu = new javax.swing.JPanel();
-        head = new javax.swing.JPanel();
-        body = new javax.swing.JPanel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        main_menu = new JPanel();
+        jPanel1 = new JPanel();
+        jPanel2 = new JPanel();
+        jTabbedPane1 = new JTabbedPane();
         panel_search = new java.awt.Panel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        panal1_button_search = new javax.swing.JButton();
-        search_std_id = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        name = new javax.swing.JLabel();
-        src_name = new javax.swing.JLabel();
-        dept = new javax.swing.JLabel();
-        src_dept = new javax.swing.JLabel();
-        id = new javax.swing.JLabel();
-        src_id = new javax.swing.JLabel();
-        cgpa = new javax.swing.JLabel();
-        src_cgpa = new javax.swing.JLabel();
-        credit = new javax.swing.JLabel();
-        src_credit = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        src_note = new javax.swing.JLabel();
+        jPanel1 = new JPanel();
+        jPanel3 = new JPanel();
+        panal1_button_search = new JButton();
+        search_std_id = new JTextField();
+        jPanel2 = new JPanel();
+        name = new JLabel();
+        src_name = new JLabel();
+        dept = new JLabel();
+        src_dept = new JLabel();
+        id = new JLabel();
+        src_id = new JLabel();
+        cgpa = new JLabel();
+        src_cgpa = new JLabel();
+        credit = new JLabel();
+        src_credit = new JLabel();
+        jButton1 = new JButton();
+        src_note = new JLabel();
         panel_add = new java.awt.Panel();
-        add_labal1 = new javax.swing.JLabel();
-        add_std_id = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        add_std_name = new javax.swing.JTextField();
-        add_student = new javax.swing.JButton();
-        add_std_note = new javax.swing.JLabel();
-        add_std_dept = new javax.swing.JComboBox<>();
-        banner = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        add_labal1 = new JLabel();
+        add_std_id = new JTextField();
+        jLabel2 = new JLabel();
+        jLabel3 = new JLabel();
+        add_std_name = new JTextField();
+        add_student = new JButton();
+        add_std_note = new JLabel();
+        add_std_dept = new JComboBox<>();
+        banner = new JPanel();
+        jLabel1 = new JLabel();
+        l_result = new JLabel();
+        jLabel7 = new JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(getPreferredSize());
@@ -103,12 +103,12 @@ public class main_menu extends javax.swing.JFrame {
         main_menu.setPreferredSize(new java.awt.Dimension(900, 500));
         main_menu.setLayout(new java.awt.GridLayout(1, 0));
 
-        head.setBackground(new java.awt.Color(255, 255, 255));
-        head.setPreferredSize(new java.awt.Dimension(900, 500));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(900, 500));
 
-        body.setBackground(new java.awt.Color(255, 255, 255));
-        body.setPreferredSize(new java.awt.Dimension(0, 0));
-        body.setLayout(new javax.swing.BoxLayout(body, javax.swing.BoxLayout.LINE_AXIS));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setPreferredSize(new java.awt.Dimension(0, 0));
+        jPanel2.setLayout(new BoxLayout(jPanel2, javax.swing.BoxLayout.LINE_AXIS));
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(900, 400));
@@ -122,10 +122,10 @@ public class main_menu extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(0, 0));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel3.setBorder(new border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel3.setPreferredSize(new java.awt.Dimension(0, 0));
 
-        panal1_button_search.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        panal1_button_search.setFont(new java.awt.Font("Segoe UI", 0, 14));  
         panal1_button_search.setForeground(new java.awt.Color(0, 0, 204));
         panal1_button_search.setText("Search");
         panal1_button_search.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -142,8 +142,8 @@ public class main_menu extends javax.swing.JFrame {
             }
         });
 
-        search_std_id.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        search_std_id.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Student ID", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 0, 204))); // NOI18N
+        search_std_id.setFont(new java.awt.Font("Segoe UI", 0, 14));  
+        search_std_id.setBorder(javax.swing.BorderFactory.createTitledBorder(new border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Student ID", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 0, 204)));  
         search_std_id.setMinimumSize(new java.awt.Dimension(80, 30));
         search_std_id.setPreferredSize(new java.awt.Dimension(80, 30));
         search_std_id.addCaretListener(new javax.swing.event.CaretListener() {
@@ -164,27 +164,27 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        name.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        name.setFont(new java.awt.Font("Serif", 1, 14));  
 
-        src_name.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        src_name.setFont(new java.awt.Font("Serif", 0, 14));  
 
-        dept.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        dept.setFont(new java.awt.Font("Serif", 1, 14));  
 
-        src_dept.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        src_dept.setFont(new java.awt.Font("Serif", 0, 14));  
 
-        id.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        id.setFont(new java.awt.Font("Serif", 1, 14));  
 
-        src_id.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        src_id.setFont(new java.awt.Font("Serif", 0, 14));  
 
-        cgpa.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        cgpa.setFont(new java.awt.Font("Serif", 1, 14));  
 
-        src_cgpa.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        src_cgpa.setFont(new java.awt.Font("Serif", 0, 14));  
 
-        credit.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        credit.setFont(new java.awt.Font("Serif", 1, 14));  
 
-        src_credit.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        src_credit.setFont(new java.awt.Font("Serif", 0, 14));  
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        javax.swing.GroupLayout jPanel2Layout = new GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,7 +241,7 @@ public class main_menu extends javax.swing.JFrame {
         src_note.setBackground(new java.awt.Color(255, 255, 255));
         src_note.setForeground(new java.awt.Color(204, 0, 0));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        javax.swing.GroupLayout jPanel3Layout = new GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,7 +272,7 @@ public class main_menu extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        javax.swing.GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -289,7 +289,7 @@ public class main_menu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout panel_searchLayout = new javax.swing.GroupLayout(panel_search);
+        javax.swing.GroupLayout panel_searchLayout = new GroupLayout(panel_search);
         panel_search.setLayout(panel_searchLayout);
         panel_searchLayout.setHorizontalGroup(
             panel_searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -311,10 +311,10 @@ public class main_menu extends javax.swing.JFrame {
         panel_add.setBackground(new java.awt.Color(255, 255, 255));
 
         add_labal1.setBackground(new java.awt.Color(255, 255, 255));
-        add_labal1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        add_labal1.setFont(new java.awt.Font("Segoe UI", 0, 14));  
         add_labal1.setText("ID :");
 
-        add_std_id.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        add_std_id.setFont(new java.awt.Font("Segoe UI", 0, 14));  
         add_std_id.setMinimumSize(new java.awt.Dimension(77, 26));
         add_std_id.setPreferredSize(new java.awt.Dimension(77, 26));
         add_std_id.addCaretListener(new javax.swing.event.CaretListener() {
@@ -334,15 +334,15 @@ public class main_menu extends javax.swing.JFrame {
         });
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14));  
         jLabel2.setText("Dept : ");
         jLabel2.setToolTipText("");
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14));  
         jLabel3.setText("Name : ");
 
-        add_std_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        add_std_name.setFont(new java.awt.Font("Segoe UI", 0, 14));  
         add_std_name.setMinimumSize(new java.awt.Dimension(77, 26));
         add_std_name.setPreferredSize(new java.awt.Dimension(77, 26));
         add_std_name.addActionListener(new java.awt.event.ActionListener() {
@@ -369,7 +369,7 @@ public class main_menu extends javax.swing.JFrame {
         });
 
         add_std_note.setBackground(new java.awt.Color(255, 255, 255));
-        add_std_note.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        add_std_note.setFont(new java.awt.Font("Segoe UI", 2, 14));  
         add_std_note.setForeground(new java.awt.Color(0, 0, 255));
         add_std_note.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
@@ -380,7 +380,7 @@ public class main_menu extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout panel_addLayout = new javax.swing.GroupLayout(panel_add);
+        javax.swing.GroupLayout panel_addLayout = new GroupLayout(panel_add);
         panel_add.setLayout(panel_addLayout);
         panel_addLayout.setHorizontalGroup(
             panel_addLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -429,26 +429,26 @@ public class main_menu extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Add", panel_add);
 
-        body.add(jTabbedPane1);
+        jPanel2.add(jTabbedPane1);
 
         banner.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/student_management_system/neub.png"))); // NOI18N
+        jLabel1.setIcon(new ImageIcon(getClass().getResource("/student_management_system/neub.png")));  
 
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(79, 171, 98));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("NORTH EAST UNIVERSITY BANGLADESH");
+        l_result.setBackground(new java.awt.Color(255, 255, 255));
+        l_result.setFont(new java.awt.Font("Segoe UI", 1, 36));  
+        l_result.setForeground(new java.awt.Color(79, 171, 98));
+        l_result.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_result.setText("NORTH EAST UNIVERSITY BANGLADESH");
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 3, 24));  
         jLabel7.setForeground(new java.awt.Color(51, 51, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Student management System");
 
-        javax.swing.GroupLayout bannerLayout = new javax.swing.GroupLayout(banner);
+        javax.swing.GroupLayout bannerLayout = new GroupLayout(banner);
         banner.setLayout(bannerLayout);
         bannerLayout.setHorizontalGroup(
             bannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -457,7 +457,7 @@ public class main_menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(l_result, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         bannerLayout.setVerticalGroup(
@@ -466,30 +466,30 @@ public class main_menu extends javax.swing.JFrame {
                 .addGroup(bannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(bannerLayout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(l_result, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout headLayout = new javax.swing.GroupLayout(head);
-        head.setLayout(headLayout);
-        headLayout.setHorizontalGroup(
-            headLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(headLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(banner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        headLayout.setVerticalGroup(
-            headLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headLayout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(banner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        main_menu.add(head);
+        main_menu.add(jPanel1);
 
         getContentPane().add(main_menu);
         main_menu.getAccessibleContext().setAccessibleName("");
@@ -776,41 +776,41 @@ public class main_menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel add_labal1;
-    private javax.swing.JComboBox<String> add_std_dept;
-    private javax.swing.JTextField add_std_id;
-    private javax.swing.JTextField add_std_name;
-    private javax.swing.JLabel add_std_note;
-    private javax.swing.JButton add_student;
-    private javax.swing.JPanel banner;
-    private javax.swing.JPanel body;
-    private javax.swing.JLabel cgpa;
-    private javax.swing.JLabel credit;
-    private javax.swing.JLabel dept;
-    private javax.swing.JPanel head;
-    private javax.swing.JLabel id;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    JLabel add_labal1;
+    JComboBox<String> add_std_dept;
+    JTextField add_std_id;
+    JTextField add_std_name;
+    JLabel add_std_note;
+    JButton add_student;
+    JPanel banner;
+    JPanel jPanel2;
+    JLabel cgpa;
+    JLabel credit;
+    JLabel dept;
+    JPanel jPanel1;
+    JLabel id;
+    JButton jButton1;
+    JLabel jLabel1;
+    JLabel jLabel2;
+    JLabel jLabel3;
+    JLabel l_result;
+    JLabel jLabel7;
+    JPanel jPanel1;
+    JPanel jPanel2;
+    JPanel jPanel3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JPanel main_menu;
-    private javax.swing.JLabel name;
-    private javax.swing.JButton panal1_button_search;
+    JPanel main_menu;
+    JLabel name;
+    JButton panal1_button_search;
     private java.awt.Panel panel_add;
     private java.awt.Panel panel_search;
-    private javax.swing.JTextField search_std_id;
-    private javax.swing.JLabel src_cgpa;
-    private javax.swing.JLabel src_credit;
-    private javax.swing.JLabel src_dept;
-    private javax.swing.JLabel src_id;
-    private javax.swing.JLabel src_name;
-    private javax.swing.JLabel src_note;
+    JTextField search_std_id;
+    JLabel src_cgpa;
+    JLabel src_credit;
+    JLabel src_dept;
+    JLabel src_id;
+    JLabel src_name;
+    JLabel src_note;
     // End of variables declaration//GEN-END:variables
 }
 

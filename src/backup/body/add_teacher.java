@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-package backup.body;
+package backup.jPanel2;
 import student_management_system.body.*;
 import java.awt.Color;
 import student_management_system.Server;
@@ -15,18 +15,18 @@ import student_management_system.teacher;
  * @author sdddd
  */
 public class add_teacher extends javax.swing.JInternalFrame {
-javax.swing.JDesktopPane body;
+javax.swing.JDesktopPane bPane;
     /**
      * Creates new form menu1
      */
-    public add_teacher(javax.swing.JDesktopPane body) {
+    public add_teacher(javax.swing.JDesktopPane bPane) {
         initComponents();
         this.setBorder (javax.swing.BorderFactory.createEmptyBorder(0,0,0,0)); 
         //BasicInternalFrameUI ui = 
         BasicInternalFrameUI ui= (BasicInternalFrameUI)this.getUI(); 
         ui.setNorthPane (null);
-        this.body=body;
-        this.setSize(body.getSize());
+        this.bPane=bPane;
+        this.setSize(bPane.getSize());
     }
 
     /**
@@ -38,29 +38,30 @@ javax.swing.JDesktopPane body;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        submit = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        aaa = new javax.swing.JLabel();
-        jhghjkjh = new javax.swing.JLabel();
-        jhghjkjh1 = new javax.swing.JLabel();
-        jhghjkjh4 = new javax.swing.JLabel();
-        jhghjkjh2 = new javax.swing.JLabel();
-        jhghjkjh3 = new javax.swing.JLabel();
-        jhghjkjh5 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        address = new javax.swing.JTextField();
-        dept = new javax.swing.JComboBox<>();
-        password = new javax.swing.JPasswordField();
-        mobile = new javax.swing.JTextField();
-        email = new javax.swing.JTextField();
-        username = new javax.swing.JTextField();
-        name = new javax.swing.JTextField();
-        note = new javax.swing.JLabel();
+        jLabel3 = new JLabel();
+        jPanel1 = new JPanel();
+        jLabel2 = new JLabel();
+        jPanel5 = new JPanel();
+        jPanel4 = new JPanel();
+        submit = new JButton();
+        jPanel3 = new JPanel();
+        aaa = new JLabel();
+        jhghjkjh = new JLabel();
+        jhghjkjh1 = new JLabel();
+        jhghjkjh4 = new JLabel();
+        jhghjkjh2 = new JLabel();
+        jhghjkjh3 = new JLabel();
+        jhghjkjh5 = new JLabel();
+        jPanel2 = new JPanel();
+        address = new JTextField();
+        dept = new JComboBox<>();
+        password = new JPasswordField();
+        mobile = new JTextField();
+        email = new JTextField();
+        username = new JTextField();
+        name = new JTextField();
+        note = new JLabel();
+        jButton1 = new JButton();
 
         jLabel3.setText("jLabel3");
 
@@ -75,7 +76,7 @@ javax.swing.JDesktopPane body;
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Noto Sans CJK TC", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Noto Sans CJK TC", 1, 24));  
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Sign Up");
 
@@ -92,14 +93,14 @@ javax.swing.JDesktopPane body;
             }
         });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        javax.swing.GroupLayout jPanel4Layout = new GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addComponent(submit, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
-                .addGap(85, 85, 85))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,7 +152,7 @@ javax.swing.JDesktopPane body;
         jhghjkjh5.setText("Address :");
         jhghjkjh5.setBorder(aaa.getBorder());
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        javax.swing.GroupLayout jPanel3Layout = new GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,7 +244,7 @@ javax.swing.JDesktopPane body;
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        javax.swing.GroupLayout jPanel2Layout = new GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -281,7 +282,7 @@ javax.swing.JDesktopPane body;
 
         note.setFont(my.font);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        javax.swing.GroupLayout jPanel5Layout = new GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -313,30 +314,43 @@ javax.swing.JDesktopPane body;
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jButton1.setFont(my.font);
+        jButton1.setText("BACK");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(108, 108, 108)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)
-                .addGap(120, 120, 120))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(79, 79, 79))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 863, Short.MAX_VALUE)
+                        .addGap(120, 120, 120))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(79, 79, 79))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(60, 60, 60)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        javax.swing.GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -372,7 +386,7 @@ javax.swing.JDesktopPane body;
 
     private void formAncestorResized(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_formAncestorResized
         // TODO add your handling code here:
-        this.setSize(body.getSize());
+        this.setSize(bPane.getSize());
     }//GEN-LAST:event_formAncestorResized
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
@@ -397,30 +411,37 @@ javax.swing.JDesktopPane body;
         }
     }//GEN-LAST:event_submitActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        jPanel2.remove(this);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel aaa;
-    private javax.swing.JTextField address;
-    private javax.swing.JComboBox<String> dept;
-    private javax.swing.JTextField email;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JLabel jhghjkjh;
-    private javax.swing.JLabel jhghjkjh1;
-    private javax.swing.JLabel jhghjkjh2;
-    private javax.swing.JLabel jhghjkjh3;
-    private javax.swing.JLabel jhghjkjh4;
-    private javax.swing.JLabel jhghjkjh5;
-    private javax.swing.JTextField mobile;
-    private javax.swing.JTextField name;
-    private javax.swing.JLabel note;
+    JLabel aaa;
+    JTextField address;
+    JComboBox<String> dept;
+    JTextField email;
+    JButton jButton1;
+    JLabel jLabel2;
+    JLabel jLabel3;
+    JPanel jPanel1;
+    JPanel jPanel2;
+    JPanel jPanel3;
+    JPanel jPanel4;
+    JPanel jPanel5;
+    JLabel jhghjkjh;
+    JLabel jhghjkjh1;
+    JLabel jhghjkjh2;
+    JLabel jhghjkjh3;
+    JLabel jhghjkjh4;
+    JLabel jhghjkjh5;
+    JTextField mobile;
+    JTextField name;
+    JLabel note;
     private javax.swing.JPasswordField password;
-    private javax.swing.JButton submit;
-    private javax.swing.JTextField username;
+    JButton submit;
+    JTextField username;
     // End of variables declaration//GEN-END:variables
 }

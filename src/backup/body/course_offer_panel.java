@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package backup.body;
+package backup.jPanel2;
 
 import student_management_system.body.*;
 import java.awt.Color;
@@ -53,16 +53,16 @@ public class course_offer_panel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        popup = new javax.swing.JPopupMenu();
-        code_box = new javax.swing.JComboBox<>();
-        tittle_box = new javax.swing.JTextField();
-        credit_box = new javax.swing.JTextField();
-        teacher_box = new javax.swing.JComboBox<>();
-        status = new javax.swing.JCheckBox();
+        popup = new JPopupMenu();
+        code_box = new JComboBox<>();
+        tittle_box = new JTextField();
+        credit_box = new JTextField();
+        teacher_box = new JComboBox<>();
+        status = new JCheckBox();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        code_box.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        code_box.setFont(new java.awt.Font("Monospaced", 1, 18));  
         code_box.setModel(Server.get_course_list(dept));
         code_box.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,21 +75,21 @@ public class course_offer_panel extends javax.swing.JPanel {
             }
         });
 
-        tittle_box.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        tittle_box.setFont(new java.awt.Font("Monospaced", 1, 18));  
         tittle_box.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tittle_boxActionPerformed(evt);
             }
         });
 
-        credit_box.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        credit_box.setFont(new java.awt.Font("Monospaced", 1, 18));  
 
-        teacher_box.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        teacher_box.setFont(new java.awt.Font("Monospaced", 1, 18));  
         teacher_box.setModel(Server.get_table_column("teacher","name"));
 
         status.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        javax.swing.GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,11 +147,11 @@ public class course_offer_panel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> code_box;
-    private javax.swing.JTextField credit_box;
+    JComboBox<String> code_box;
+    JTextField credit_box;
     public javax.swing.JPopupMenu popup;
     private javax.swing.JCheckBox status;
-    private javax.swing.JComboBox<String> teacher_box;
-    private javax.swing.JTextField tittle_box;
+    JComboBox<String> teacher_box;
+    JTextField tittle_box;
     // End of variables declaration//GEN-END:variables
 }

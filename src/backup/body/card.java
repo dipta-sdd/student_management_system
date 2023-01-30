@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package backup.body;
+package backup.jPanel2;
 
 import student_management_system.body.*;
 
@@ -28,8 +28,8 @@ public class card extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new JLabel();
+        jLabel2 = new JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(150, 150));
@@ -38,12 +38,12 @@ public class card extends javax.swing.JPanel {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/student_management_system/icon/student.png"))); // NOI18N
+        jLabel2.setIcon(new ImageIcon(getClass().getResource("/student_management_system/icon/student.png")));  
         jLabel2.setMaximumSize(new java.awt.Dimension(32, 32));
         jLabel2.setMinimumSize(new java.awt.Dimension(32, 32));
         jLabel2.setPreferredSize(new java.awt.Dimension(150, 150));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        javax.swing.GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -63,7 +63,7 @@ public class card extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    JLabel jLabel1;
+    JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

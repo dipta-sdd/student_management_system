@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 
-package backup.body;
+package backup.jPanel2;
 
 import student_management_system.body.*;
 import student_management_system.Server;
@@ -38,17 +38,17 @@ public class add_course_panel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jLabel1 = new javax.swing.JLabel();
-        code = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        credit = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        tittle = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        dept = new javax.swing.JComboBox<>();
-        led = new javax.swing.JRadioButton();
+        jRadioButton1 = new JRadioButton();
+        jRadioButton2 = new JRadioButton();
+        jLabel1 = new JLabel();
+        code = new JTextField();
+        jLabel2 = new JLabel();
+        credit = new JTextField();
+        jLabel3 = new JLabel();
+        tittle = new JTextField();
+        jLabel4 = new JLabel();
+        dept = new JComboBox<>();
+        led = new JRadioButton();
 
         jRadioButton1.setText("jRadioButton1");
 
@@ -96,7 +96,7 @@ public class add_course_panel extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        javax.swing.GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,17 +163,17 @@ public class add_course_panel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField code;
-    private javax.swing.JTextField credit;
-    private javax.swing.JComboBox<String> dept;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    JTextField code;
+    JTextField credit;
+    JComboBox<String> dept;
+    JLabel jLabel1;
+    JLabel jLabel2;
+    JLabel jLabel3;
+    JLabel jLabel4;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton led;
-    private javax.swing.JTextField tittle;
+    JTextField tittle;
     // End of variables declaration//GEN-END:variables
 
 }

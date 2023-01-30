@@ -2,13 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package backup.body;
+package backup.jPanel2;
 
 import student_management_system.body.*;
 import java.awt.Color;
 import javax.swing.JMenuItem;
 import student_management_system.Server;
 import student_management_system.course;
+import student_management_system.student;
 
 /**
  *
@@ -34,6 +35,17 @@ public class course_registretion_panel extends javax.swing.JPanel {
         credit_box.setText(crs.credit);
         teacher_box.setText(teacher);
     }
+    public void reg(student std){
+        if (status){
+            if(Server.course_reg(std, code, teacher)){
+                note.setText("Sucessful");
+                note.setForeground(Color.BLUE);
+            } else {
+                note.setText("Error");
+                note.setForeground(Color.red);
+            }
+        }
+    }
 
 
 
@@ -50,12 +62,13 @@ public class course_registretion_panel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        popup = new javax.swing.JPopupMenu();
-        status_box = new javax.swing.JCheckBox();
-        credit_box = new javax.swing.JLabel();
-        title_box = new javax.swing.JLabel();
-        code_box = new javax.swing.JLabel();
-        teacher_box = new javax.swing.JLabel();
+        popup = new JPopupMenu();
+        status_box = new JCheckBox();
+        credit_box = new JLabel();
+        title_box = new JLabel();
+        code_box = new JLabel();
+        teacher_box = new JLabel();
+        note = new JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -82,7 +95,7 @@ public class course_registretion_panel extends javax.swing.JPanel {
         teacher_box.setFont(my.font);
         teacher_box.setText("Course Teacher");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        javax.swing.GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,23 +106,27 @@ public class course_registretion_panel extends javax.swing.JPanel {
                 .addComponent(code_box, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(title_box, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(credit_box, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(credit_box, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(teacher_box, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
+                .addComponent(teacher_box, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(note, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(8, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(status_box, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(credit_box, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(teacher_box, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(title_box, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(code_box, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(status_box, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(credit_box, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(teacher_box, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(title_box, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(code_box, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(note, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -117,15 +134,28 @@ public class course_registretion_panel extends javax.swing.JPanel {
     private void status_boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_status_boxActionPerformed
         // TODO add your handling code here:
         status = status_box.isSelected();
+        if(status){
+            code_box.setForeground(Color.BLUE);
+            title_box.setForeground(Color.blue);
+            credit_box.setForeground(Color.blue);
+            teacher_box.setForeground(Color.blue);
+        } else {
+            code_box.setForeground(Color.black);
+            title_box.setForeground(Color.black);
+            credit_box.setForeground(Color.black);
+            teacher_box.setForeground(Color.black);
+        }
+
     }//GEN-LAST:event_status_boxActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel code_box;
-    private javax.swing.JLabel credit_box;
+    JLabel code_box;
+    JLabel credit_box;
+    JLabel note;
     public javax.swing.JPopupMenu popup;
     public javax.swing.JCheckBox status_box;
-    private javax.swing.JLabel teacher_box;
-    private javax.swing.JLabel title_box;
+    JLabel teacher_box;
+    JLabel title_box;
     // End of variables declaration//GEN-END:variables
 }

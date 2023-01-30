@@ -2,27 +2,33 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-package student_management_system.body;
+package student_management_system.body; 
 
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import student_management_system.teacher;
+import student_management_system.user;
 
 /**
  *
  * @author sdddd
  */
 public class menu_frame_sample111 extends javax.swing.JInternalFrame {
-javax.swing.JDesktopPane body;
+javax.swing.JDesktopPane bPane;
+user u;
+teacher t;
     /**
      * Creates new form menu1
      */
-    public menu_frame_sample111(javax.swing.JDesktopPane body) {
+    public menu_frame_sample111(javax.swing.JDesktopPane bPane,user u) {
         initComponents();
         this.setBorder (javax.swing.BorderFactory.createEmptyBorder(0,0,0,0)); 
         //BasicInternalFrameUI ui = 
         BasicInternalFrameUI ui= (BasicInternalFrameUI)this.getUI(); 
         ui.setNorthPane (null);
-        this.body=body;
-        this.setSize(body.getSize());
+        this.bPane=bPane;
+        this.setSize(bPane.getSize());
+        this.u=u;
+        this.t=u.user_teacher;
     }
 
     /**
@@ -34,7 +40,7 @@ javax.swing.JDesktopPane body;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanel1 = new JPanel();
 
         addHierarchyBoundsListener(new java.awt.event.HierarchyBoundsListener() {
             public void ancestorMoved(java.awt.event.HierarchyEvent evt) {
@@ -46,7 +52,7 @@ javax.swing.JDesktopPane body;
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 255));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        javax.swing.GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -57,7 +63,7 @@ javax.swing.JDesktopPane body;
             .addGap(0, 448, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        javax.swing.GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -75,11 +81,11 @@ javax.swing.JDesktopPane body;
 
     private void formAncestorResized(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_formAncestorResized
         // TODO add your handling code here:
-        this.setSize(body.getSize());
+        this.setSize(bPane.getSize());
     }//GEN-LAST:event_formAncestorResized
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -2,11 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-package student_management_system.body;
+package student_management_system.body; 
 import com.mysql.cj.jdbc.ConnectionImpl;
 import com.mysql.cj.jdbc.StatementImpl;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+
+import javax.swing.*;
 import com.mysql.cj.jdbc.ConnectionImpl;
 import java.awt.Color;
 import java.awt.Font;
@@ -14,25 +16,32 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import student_management_system.EvenOddRenderer;
+import student_management_system.student;
+import student_management_system.teacher;
+import student_management_system.user;
 
 /**
  *
  * @author sdddd
  */
 public class studentlist extends javax.swing.JInternalFrame {
-javax.swing.JDesktopPane body;
+javax.swing.JDesktopPane bPane;
+user u;
+teacher t;
 Font polash= new Font("Noto Mono",Font.BOLD,18);
     /**
      * Creates new form menu1
-     * @param body
+     * @param 
      */
-    public studentlist(javax.swing.JDesktopPane body) {
+    public studentlist(javax.swing.JDesktopPane bPane,user u) {
         initComponents();
         this.setBorder (javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI ui= (BasicInternalFrameUI)this.getUI(); 
         ui.setNorthPane (null);
-        this.body=body;
-        this.setSize(body.getSize());
+        this.bPane=bPane;
+        this.setSize(bPane.getSize());
+        this.u=u;
+        this.t=u.user_teacher;
         table_std.getTableHeader().setFont(new Font("Noto Mono", Font.BOLD,18));
         table_std.getTableHeader().setOpaque(false);
         table_std.getTableHeader().setBackground(new Color(255,255,255));
@@ -45,6 +54,7 @@ Font polash= new Font("Noto Mono",Font.BOLD,18);
         jScrollPane1.getVerticalScrollBar().setUI(new CustomScrollBarUI());
         
     }
+
 
 private void update_table()
     {
@@ -68,7 +78,7 @@ private void update_table()
                 String str[]={" "," "," "," "};
                 new_raw.addRow(str);
             }
-            //System.out.println(body2.getSize());            
+            //System.out.println(jPanel22.getSize());            
         }              
         catch(Exception e){
             System.out.println("Server error");
@@ -169,15 +179,15 @@ private void update_table()
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        table_std = new javax.swing.JTable();
-        jPanel2 = new javax.swing.JPanel();
-        search = new javax.swing.JButton();
-        search1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        by_name = new javax.swing.JRadioButton();
-        search2 = new javax.swing.JButton();
+        jPanel1 = new JPanel();
+        jScrollPane1 = new JScrollPane();
+        table_std = new JTable();
+        jPanel2 = new JPanel();
+        search = new JButton();
+        search1 = new JButton();
+        box_enter_value = new JTextField();
+        by_name = new JRadioButton();
+        search2 = new JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         addHierarchyBoundsListener(new java.awt.event.HierarchyBoundsListener() {
@@ -198,7 +208,7 @@ private void update_table()
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setBorder(null);
 
-        table_std.setFont(new java.awt.Font("Noto Mono", 1, 18)); // NOI18N
+        table_std.setFont(new java.awt.Font("Noto Mono", 1, 18));  
         table_std.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -217,6 +227,11 @@ private void update_table()
         });
         table_std.setGridColor(new java.awt.Color(255, 255, 255));
         table_std.setRowHeight(40);
+        table_std.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table_stdMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(table_std);
         if (table_std.getColumnModel().getColumnCount() > 0) {
             table_std.getColumnModel().getColumn(0).setMinWidth(150);
@@ -252,14 +267,14 @@ private void update_table()
             }
         });
 
-        jTextField1.addCaretListener(new javax.swing.event.CaretListener() {
+        box_enter_value.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                jTextField1CaretUpdate(evt);
+                box_enter_valueCaretUpdate(evt);
             }
         });
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        box_enter_value.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                box_enter_valueActionPerformed(evt);
             }
         });
 
@@ -282,7 +297,7 @@ private void update_table()
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        javax.swing.GroupLayout jPanel2Layout = new GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,7 +310,7 @@ private void update_table()
                         .addComponent(search2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(609, 609, 609))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jTextField1)
+                        .addComponent(box_enter_value)
                         .addGap(18, 18, 18)
                         .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -307,7 +322,7 @@ private void update_table()
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box_enter_value, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(by_name, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -317,7 +332,7 @@ private void update_table()
                 .addContainerGap(7, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        javax.swing.GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -339,7 +354,7 @@ private void update_table()
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        javax.swing.GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -353,21 +368,21 @@ private void update_table()
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void box_enter_valueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box_enter_valueActionPerformed
         // TODO add your handling code here:
         if(by_name.isSelected())
-            update_table_search_by_name(jTextField1.getText());
+            update_table_search_by_name(box_enter_value.getText());
         else
-            update_table_search(jTextField1.getText());
-    }//GEN-LAST:event_jTextField1ActionPerformed
+            update_table_search(box_enter_value.getText());
+    }//GEN-LAST:event_box_enter_valueActionPerformed
 
-    private void jTextField1CaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_jTextField1CaretUpdate
+    private void box_enter_valueCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_box_enter_valueCaretUpdate
         // TODO add your handling code here:
         if(by_name.isSelected())
-            update_table_search_by_name(jTextField1.getText());
+            update_table_search_by_name(box_enter_value.getText());
         else
-            update_table_search(jTextField1.getText());
-    }//GEN-LAST:event_jTextField1CaretUpdate
+            update_table_search(box_enter_value.getText());
+    }//GEN-LAST:event_box_enter_valueCaretUpdate
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
         // TODO add your handling code here:
@@ -376,47 +391,59 @@ private void update_table()
     private void search1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search1ActionPerformed
         // TODO add your handling code here:
         setVisible(false);
-        body.remove(this);
+        bPane.remove(this);
     }//GEN-LAST:event_search1ActionPerformed
 
     private void search2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search2ActionPerformed
         // TODO add your handling code here:
-        add_student add_std=new add_student(body);
-        body.add(add_std).setVisible(true);
+        add_student add_std=new add_student(bPane);
+        bPane.add(add_std).setVisible(true);
     }//GEN-LAST:event_search2ActionPerformed
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         // TODO add your handling code here:
         if(by_name.isSelected())
-            update_table_search_by_name(jTextField1.getText());
+            update_table_search_by_name(box_enter_value.getText());
         else
-            update_table_search(jTextField1.getText());
+            update_table_search(box_enter_value.getText());
     }//GEN-LAST:event_searchActionPerformed
 
     private void by_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_by_nameActionPerformed
         // TODO add your handling code here:
         if(by_name.isSelected())
-            update_table_search_by_name(jTextField1.getText());
+            update_table_search_by_name(box_enter_value.getText());
         else
-            update_table_search(jTextField1.getText());
+            update_table_search(box_enter_value.getText());
     }//GEN-LAST:event_by_nameActionPerformed
 
     private void formAncestorResized(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_formAncestorResized
         // TODO add your handling code here:
-        this.setSize(body.getSize());
+        this.setSize(bPane.getSize());
         System.out.println(this.getSize());
     }//GEN-LAST:event_formAncestorResized
+
+    private void table_stdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_stdMouseClicked
+        // TODO add your handling code here:
+        //System.out.println("row selected"+ table_std.getSelectedRow());
+        int column = 0;
+        int row = table_std.getSelectedRow();
+        String value = table_std.getModel().getValueAt(row, column).toString();
+        System.out.println("id : "+value);
+        student std=new student(value);
+        result_show obj=new result_show(bPane,u,std);
+        bPane.add(obj).setVisible(true);
+    }//GEN-LAST:event_table_stdMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton by_name;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    JPanel jPanel1;
+    JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JButton search;
-    private javax.swing.JButton search1;
-    private javax.swing.JButton search2;
+    JTextField box_enter_value;
+    JButton search;
+    JButton search1;
+    JButton search2;
     private javax.swing.JTable table_std;
     // End of variables declaration//GEN-END:variables
 }

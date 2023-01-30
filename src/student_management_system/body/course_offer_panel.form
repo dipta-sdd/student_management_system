@@ -38,11 +38,13 @@
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="code_box" min="-2" pref="119" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="tittle_box" pref="265" max="32767" attributes="0"/>
+              <Component id="tittle_box" pref="288" max="32767" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="credit_box" min="-2" pref="93" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="teacher_box" pref="298" max="32767" attributes="0"/>
+              <Component id="teacher_box" pref="249" max="32767" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="note" min="-2" pref="134" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -58,6 +60,7 @@
                       <Component id="tittle_box" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                       <Component id="credit_box" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                       <Component id="teacher_box" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="note" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -117,6 +120,16 @@
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="note">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Monospaced" size="18" style="1"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
         </Property>
       </Properties>
     </Component>

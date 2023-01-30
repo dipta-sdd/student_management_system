@@ -2,28 +2,36 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-package student_management_system.body;
+package student_management_system.body; 
 
+import javax.swing.*;
+import javax.swing.border.*;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import student_management_system.Server;
+import student_management_system.teacher;
+import student_management_system.user;
 /**
  *
  * @author sdddd
  */
 public class course_offer extends javax.swing.JInternalFrame {
-javax.swing.JDesktopPane body;
+javax.swing.JDesktopPane bPane;
+user u;
+teacher t;
 boolean selected;
     /**
      * Creates new form menu1
      */
-    public course_offer(javax.swing.JDesktopPane body) {
+    public course_offer(javax.swing.JDesktopPane bPane,user u) {
         course_offer_panel course_offer_panel[] = new course_offer_panel[10];
         initComponents();
         this.setBorder (javax.swing.BorderFactory.createEmptyBorder(0,0,0,0)); 
         BasicInternalFrameUI ui= (BasicInternalFrameUI)this.getUI(); 
         ui.setNorthPane (null);
-        this.body=body;
-        this.setSize(body.getSize());
+        this.bPane=bPane;
+        this.setSize(bPane.getSize());
+        this.u=u;
+        this.t=u.user_teacher;
         jScrollPane1.getVerticalScrollBar().setUI(new CustomScrollBarUI());
         jScrollPane1.getHorizontalScrollBar().setUI(new CustomScrollBarUI());
         course_offer_panel10.setVisible(false);
@@ -45,18 +53,18 @@ boolean selected;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        semester_box = new javax.swing.JComboBox<>();
-        dept_box = new javax.swing.JComboBox<>();
-        session_box = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
+        jPanel1 = new JPanel();
+        jLabel1 = new JLabel();
+        jPanel2 = new JPanel();
+        jScrollPane1 = new JScrollPane();
+        jPanel4 = new JPanel();
+        jPanel3 = new JPanel();
+        jLabel4 = new JLabel();
+        jLabel2 = new JLabel();
+        semester_box = new JComboBox<>();
+        dept_box = new JComboBox<>();
+        session_box = new JComboBox<>();
+        jLabel5 = new JLabel();
         course_offer_panel1 = new student_management_system.body.course_offer_panel();
         course_offer_panel2 = new student_management_system.body.course_offer_panel();
         course_offer_panel3 = new student_management_system.body.course_offer_panel();
@@ -65,11 +73,11 @@ boolean selected;
         course_offer_panel6 = new student_management_system.body.course_offer_panel();
         course_offer_panel7 = new student_management_system.body.course_offer_panel();
         course_offer_panel8 = new student_management_system.body.course_offer_panel();
-        jPanel5 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jPanel5 = new JPanel();
+        jButton3 = new JButton();
+        jButton4 = new JButton();
+        jButton1 = new JButton();
+        jButton2 = new JButton();
         course_offer_panel9 = new student_management_system.body.course_offer_panel();
         course_offer_panel10 = new student_management_system.body.course_offer_panel();
 
@@ -83,7 +91,7 @@ boolean selected;
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Monospaced", 1, 24));  
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Course Offer");
 
@@ -96,11 +104,11 @@ boolean selected;
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel4.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Monospaced", 1, 18));  
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Department:");
 
-        jLabel2.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Monospaced", 1, 18));  
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Semester :");
 
@@ -132,11 +140,11 @@ boolean selected;
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Monospaced", 1, 18));  
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Session :");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        javax.swing.GroupLayout jPanel3Layout = new GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,7 +161,7 @@ boolean selected;
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(semester_box, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,6 +198,11 @@ boolean selected;
 
         jButton1.setFont(my.font);
         jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(my.font);
         jButton2.setText("Add More Course");
@@ -199,7 +212,7 @@ boolean selected;
             }
         });
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        javax.swing.GroupLayout jPanel5Layout = new GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,8 +221,8 @@ boolean selected;
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -226,7 +239,7 @@ boolean selected;
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        javax.swing.GroupLayout jPanel4Layout = new GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,7 +292,7 @@ boolean selected;
 
         jScrollPane1.setViewportView(jPanel4);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        javax.swing.GroupLayout jPanel2Layout = new GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -291,11 +304,11 @@ boolean selected;
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        javax.swing.GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -314,7 +327,7 @@ boolean selected;
                 .addGap(0, 0, 0))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        javax.swing.GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -334,7 +347,7 @@ boolean selected;
 
     private void formAncestorResized(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_formAncestorResized
         // TODO add your handling code here:
-        this.setSize(body.getSize());
+        this.setSize(bPane.getSize());
     }//GEN-LAST:event_formAncestorResized
 
     private void dept_boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dept_boxActionPerformed
@@ -403,7 +416,7 @@ boolean selected;
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPanel2ActionPerformed
         // TODO add your handling code here:
         course_offer_panel1.clear();
         course_offer_panel2.clear();
@@ -415,7 +428,13 @@ boolean selected;
         course_offer_panel8.clear();
         course_offer_panel9.clear();
         course_offer_panel10.clear();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jPanel2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        bPane.remove(this);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -429,22 +448,22 @@ boolean selected;
     private student_management_system.body.course_offer_panel course_offer_panel7;
     private student_management_system.body.course_offer_panel course_offer_panel8;
     private student_management_system.body.course_offer_panel course_offer_panel9;
-    private javax.swing.JComboBox<String> dept_box;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
+    JComboBox<String> dept_box;
+    JButton jButton1;
+    JButton jButton2;
+    JButton jButton3;
+    JButton jButton4;
+    JLabel jLabel1;
+    JLabel jLabel2;
+    JLabel jLabel4;
+    JLabel jLabel5;
+    JPanel jPanel1;
+    JPanel jPanel2;
+    JPanel jPanel3;
+    JPanel jPanel4;
+    JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JComboBox<String> semester_box;
-    private javax.swing.JComboBox<String> session_box;
+    JComboBox<String> semester_box;
+    JComboBox<String> session_box;
     // End of variables declaration//GEN-END:variables
 }

@@ -46,12 +46,12 @@ public class EvenOddRenderer implements TableCellRenderer {
 /*
 
 
-    public studentlist1(javax.swing.JDesktopPane body) {
+    public studentlist1(javax.swing.JDesktopPane bPane) {
         initComponents();
         this.setBorder (javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI ui= (BasicInternalFrameUI)this.getUI(); 
         ui.setNorthPane (null);
-        body2=body;
+        jPanel22=jPanel2;
         table_std.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD,14));
         table_std.getTableHeader().setOpaque(false);
         table_std.getTableHeader().setBackground(new Color(255,255,255));
@@ -61,12 +61,12 @@ public class EvenOddRenderer implements TableCellRenderer {
         table_std.setDefaultRenderer(Object.class, renderer);
         update_table();
     }
-    public studentlist1(javax.swing.JDesktopPane body,String dept) {
+    public studentlist1(javax.swing.JDesktopPane bPane,String dept) {
         initComponents();
         this.setBorder (javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI ui= (BasicInternalFrameUI)this.getUI(); 
         ui.setNorthPane (null);
-        body2=body;
+        jPanel22=jPanel2;
         table_std.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD,14));
         table_std.getTableHeader().setOpaque(false);
         table_std.getTableHeader().setBackground(new Color(255,255,255));
@@ -97,7 +97,7 @@ public class EvenOddRenderer implements TableCellRenderer {
                 String str[]={" "," "," "," "};
                 new_raw.addRow(str);
             }
-            System.out.println(body2.getSize());
+            System.out.println(jPanel22.getSize());
             //new_raw.getDataVector().removeAllElements();//to clear table;
             
         }              
@@ -123,7 +123,7 @@ public class EvenOddRenderer implements TableCellRenderer {
                 new_raw.addRow(str);
                 System.out.println(str[0]+" "+str[1]);
             }
-            System.out.println(body2.getSize());
+            System.out.println(jPanel22.getSize());
         }              
         catch(Exception e){
             System.out.println("Server error");

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package backup.body;
+package backup.jPanel2;
 
 import student_management_system.body.*;
 import student_management_system.Server;
@@ -41,9 +41,9 @@ course crs;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        id = new javax.swing.JLabel();
-        name = new javax.swing.JLabel();
-        result = new javax.swing.JTextField();
+        id = new JLabel();
+        name = new JLabel();
+        result = new JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -60,7 +60,7 @@ course crs;
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        javax.swing.GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,8 +92,8 @@ course crs;
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel id;
-    private javax.swing.JLabel name;
-    private javax.swing.JTextField result;
+    JLabel id;
+    JLabel name;
+    JTextField result;
     // End of variables declaration//GEN-END:variables
 }

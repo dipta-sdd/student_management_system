@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-package student_management_system.body;
+package student_management_system.body; 
 import java.awt.Color;
 import student_management_system.Server;
-
+import javax.swing.*;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import student_management_system.teacher;
 
@@ -14,18 +14,18 @@ import student_management_system.teacher;
  * @author sdddd
  */
 public class add_teacher extends javax.swing.JInternalFrame {
-javax.swing.JDesktopPane body;
+javax.swing.JDesktopPane bPane;
     /**
      * Creates new form menu1
      */
-    public add_teacher(javax.swing.JDesktopPane body) {
+    public add_teacher(javax.swing.JDesktopPane bPane) {
         initComponents();
         this.setBorder (javax.swing.BorderFactory.createEmptyBorder(0,0,0,0)); 
         //BasicInternalFrameUI ui = 
         BasicInternalFrameUI ui= (BasicInternalFrameUI)this.getUI(); 
         ui.setNorthPane (null);
-        this.body=body;
-        this.setSize(body.getSize());
+        this.bPane=bPane;
+        this.setSize(bPane.getSize());
     }
 
     /**
@@ -371,7 +371,7 @@ javax.swing.JDesktopPane body;
 
     private void formAncestorResized(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_formAncestorResized
         // TODO add your handling code here:
-        this.setSize(body.getSize());
+        this.setSize(bPane.getSize());
     }//GEN-LAST:event_formAncestorResized
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
@@ -419,7 +419,7 @@ javax.swing.JDesktopPane body;
     private javax.swing.JTextField name;
     private javax.swing.JLabel note;
     private javax.swing.JPasswordField password;
-    private javax.swing.JButton submit;
-    private javax.swing.JTextField username;
+    JButton submit;
+    JTextField username;
     // End of variables declaration//GEN-END:variables
 }

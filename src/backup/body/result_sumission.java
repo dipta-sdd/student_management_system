@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-package backup.body;
+package backup.jPanel2;
 import student_management_system.body.*;
 import student_management_system.Server;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -13,7 +13,7 @@ import student_management_system.user;
  * @author sdddd
  */
 public class result_sumission extends javax.swing.JInternalFrame {
-javax.swing.JDesktopPane body;
+javax.swing.JDesktopPane bPane;
 user u;
 String teacher;
 String code;
@@ -21,17 +21,18 @@ String code;
      * Creates new form menu1
      */
 
-    public result_sumission(javax.swing.JDesktopPane body,user u) {
+    public result_sumission(javax.swing.JDesktopPane bPane,user u) {
         initComponents();
         this.setBorder (javax.swing.BorderFactory.createEmptyBorder(0,0,0,0)); 
         //BasicInternalFrameUI ui = 
         BasicInternalFrameUI ui= (BasicInternalFrameUI)this.getUI(); 
         ui.setNorthPane (null);
-        this.body=body;
-        this.setSize(body.getSize());
+        this.bPane=bPane;
+        this.setSize(bPane.getSize());
+        this.u=u;
         this.teacher=u.user_teacher.name;
-        System.out.println(this.teacher);
-        code_box.setModel(Server.get_table_column_where_str1_eq_str2("course_offer", "code", "teacher", teacher));
+        System.out.println("teacher name: "+this.u.user_teacher.name);
+        code_box.setModel(Server.get_table_column_where_str1_eq_str2andcurrent_session("course_offer", "code", "teacher", teacher));
     }
 
     /**
@@ -43,13 +44,13 @@ String code;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        code_box = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel1 = new JPanel();
+        jLabel1 = new JLabel();
+        jLabel2 = new JLabel();
+        code_box = new JComboBox<>();
+        jScrollPane1 = new JScrollPane();
+        jPanel2 = new JPanel();
+        jPanel3 = new JPanel();
         result_submission_panel1 = new student_management_system.body.result_submission_panel();
         result_submission_panel2 = new student_management_system.body.result_submission_panel();
         result_submission_panel3 = new student_management_system.body.result_submission_panel();
@@ -110,8 +111,8 @@ String code;
         result_submission_panel58 = new student_management_system.body.result_submission_panel();
         result_submission_panel59 = new student_management_system.body.result_submission_panel();
         result_submission_panel60 = new student_management_system.body.result_submission_panel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButton1 = new JButton();
+        jButton2 = new JButton();
 
         addHierarchyBoundsListener(new java.awt.event.HierarchyBoundsListener() {
             public void ancestorMoved(java.awt.event.HierarchyEvent evt) {
@@ -146,7 +147,7 @@ String code;
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        javax.swing.GroupLayout jPanel3Layout = new GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -349,7 +350,7 @@ String code;
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        javax.swing.GroupLayout jPanel2Layout = new GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -380,7 +381,7 @@ String code;
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        javax.swing.GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -415,7 +416,7 @@ String code;
                 .addGap(0, 0, 0))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        javax.swing.GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -433,7 +434,7 @@ String code;
 
     private void formAncestorResized(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_formAncestorResized
         // TODO add your handling code here:
-        this.setSize(body.getSize());
+        this.setSize(bPane.getSize());
     }//GEN-LAST:event_formAncestorResized
 
     private void code_boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_code_boxActionPerformed
@@ -575,19 +576,19 @@ String code;
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        body.remove(this);
+        jPanel2.remove(this);
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> code_box;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    JComboBox<String> code_box;
+    JButton jButton1;
+    JButton jButton2;
+    JLabel jLabel1;
+    JLabel jLabel2;
+    JPanel jPanel1;
+    JPanel jPanel2;
+    JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private student_management_system.body.result_submission_panel result_submission_panel1;
     private student_management_system.body.result_submission_panel result_submission_panel10;

@@ -4,6 +4,8 @@
  */
 package student_management_system;
 
+import javax.swing.GroupLayout;
+import javax.swing.JLabel;
 import student_management_system.body.my;
 
 /**
@@ -34,7 +36,7 @@ public class option extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        tittle = new javax.swing.JLabel();
+        tittle = new JLabel();
 
         setBackground(new java.awt.Color(0, 153, 153));
         setPreferredSize(new java.awt.Dimension(180, 50));
@@ -44,7 +46,7 @@ public class option extends javax.swing.JPanel {
         tittle.setForeground(new java.awt.Color(255, 255, 255));
         tittle.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        javax.swing.GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -61,6 +63,6 @@ public class option extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel tittle;
+    JLabel tittle;
     // End of variables declaration//GEN-END:variables
 }

@@ -2,8 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-package student_management_system.body;
-
+package student_management_system.body; 
+import javax.swing.*;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import student_management_system.student;
 import student_management_system.teacher;
@@ -14,20 +14,20 @@ import student_management_system.user;
  * @author sdddd
  */
 public class welcome_student extends javax.swing.JInternalFrame {
-javax.swing.JDesktopPane body;
+javax.swing.JDesktopPane bPane;
 user u;
 student s;
     /**
      * Creates new form menu1
      */
-    public welcome_student(javax.swing.JDesktopPane body,user u) {
+    public welcome_student(javax.swing.JDesktopPane bPane,user u) {
         initComponents();
         this.setBorder (javax.swing.BorderFactory.createEmptyBorder(0,0,0,0)); 
         //BasicInternalFrameUI ui = 
         BasicInternalFrameUI ui= (BasicInternalFrameUI)this.getUI(); 
         ui.setNorthPane (null);
-        this.body=body;
-        this.setSize(body.getSize());
+        this.bPane=bPane;
+        this.setSize(bPane.getSize());
         this.u=u;
         this.s=u.user_student;
         name.setText(s.name);
@@ -40,6 +40,8 @@ student s;
         session.setText(s.session);
         semester.setText(s.semester);
         
+        System.out.println("............"+u.type);
+        System.out.println("............"+this.u.type);
     }
 
     /**
@@ -51,31 +53,31 @@ student s;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        address = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        dept = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        semester = new javax.swing.JLabel();
-        email = new javax.swing.JLabel();
-        session = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        cgpa = new javax.swing.JLabel();
-        mobile = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        id = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        name = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jPanel1 = new JPanel();
+        jLabel1 = new JLabel();
+        jPanel2 = new JPanel();
+        jButton1 = new JButton();
+        jPanel3 = new JPanel();
+        address = new JLabel();
+        jLabel7 = new JLabel();
+        jPanel4 = new JPanel();
+        jLabel2 = new JLabel();
+        dept = new JLabel();
+        jLabel10 = new JLabel();
+        jLabel9 = new JLabel();
+        l_result = new JLabel();
+        semester = new JLabel();
+        email = new JLabel();
+        session = new JLabel();
+        jPanel5 = new JPanel();
+        jLabel4 = new JLabel();
+        cgpa = new JLabel();
+        mobile = new JLabel();
+        jLabel3 = new JLabel();
+        id = new JLabel();
+        jLabel5 = new JLabel();
+        name = new JLabel();
+        jLabel8 = new JLabel();
 
         addHierarchyBoundsListener(new java.awt.event.HierarchyBoundsListener() {
             public void ancestorMoved(java.awt.event.HierarchyEvent evt) {
@@ -87,7 +89,7 @@ student s;
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(my.font);
+        jLabel1.setFont(my.font2);
         jLabel1.setForeground(new java.awt.Color(102, 102, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Profile");
@@ -145,12 +147,12 @@ student s;
         jLabel9.setMinimumSize(new java.awt.Dimension(165, 52));
         jLabel9.setPreferredSize(new java.awt.Dimension(165, 52));
 
-        jLabel6.setFont(my.font);
-        jLabel6.setForeground(new java.awt.Color(102, 102, 255));
-        jLabel6.setText("Email:");
-        jLabel6.setMaximumSize(new java.awt.Dimension(165, 52));
-        jLabel6.setMinimumSize(new java.awt.Dimension(165, 52));
-        jLabel6.setPreferredSize(new java.awt.Dimension(165, 52));
+        l_result.setFont(my.font);
+        l_result.setForeground(new java.awt.Color(102, 102, 255));
+        l_result.setText("Email:");
+        l_result.setMaximumSize(new java.awt.Dimension(165, 52));
+        l_result.setMinimumSize(new java.awt.Dimension(165, 52));
+        l_result.setPreferredSize(new java.awt.Dimension(165, 52));
 
         semester.setFont(my.font);
         semester.setText("a");
@@ -168,7 +170,7 @@ student s;
         session.setMinimumSize(new java.awt.Dimension(165, 52));
         session.setPreferredSize(new java.awt.Dimension(165, 52));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        javax.swing.GroupLayout jPanel4Layout = new GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,7 +185,7 @@ student s;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(dept, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(l_result, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -202,7 +204,7 @@ student s;
                     .addComponent(dept, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(l_result, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,7 +269,7 @@ student s;
         jLabel8.setMinimumSize(new java.awt.Dimension(165, 52));
         jLabel8.setPreferredSize(new java.awt.Dimension(165, 52));
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        javax.swing.GroupLayout jPanel5Layout = new GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -315,7 +317,7 @@ student s;
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        javax.swing.GroupLayout jPanel3Layout = new GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -347,15 +349,15 @@ student s;
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        javax.swing.GroupLayout jPanel2Layout = new GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -368,7 +370,7 @@ student s;
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        javax.swing.GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -388,7 +390,7 @@ student s;
                 .addContainerGap(189, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        javax.swing.GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -404,41 +406,41 @@ student s;
 
     private void formAncestorResized(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_formAncestorResized
         // TODO add your handling code here:
-        this.setSize(body.getSize());
+        this.setSize(bPane.getSize());
     }//GEN-LAST:event_formAncestorResized
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        course_registretion obj=new course_registretion(body,u  ); 
-        body.add(obj).setVisible(true);
+        course_registretion obj=new course_registretion(bPane,u  ); 
+        bPane.add(obj).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel address;
-    private javax.swing.JLabel cgpa;
-    private javax.swing.JLabel dept;
-    private javax.swing.JLabel email;
-    private javax.swing.JLabel id;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JLabel mobile;
-    private javax.swing.JLabel name;
-    private javax.swing.JLabel semester;
-    private javax.swing.JLabel session;
+    JLabel address;
+    JLabel cgpa;
+    JLabel dept;
+    JLabel email;
+    JLabel id;
+    JButton jButton1;
+    JLabel jLabel1;
+    JLabel jLabel10;
+    JLabel jLabel2;
+    JLabel jLabel3;
+    JLabel jLabel4;
+    JLabel jLabel5;
+    JLabel l_result;
+    JLabel jLabel7;
+    JLabel jLabel8;
+    JLabel jLabel9;
+    JPanel jPanel1;
+    JPanel jPanel2;
+    JPanel jPanel3;
+    JPanel jPanel4;
+    JPanel jPanel5;
+    JLabel mobile;
+    JLabel name;
+    JLabel semester;
+    JLabel session;
     // End of variables declaration//GEN-END:variables
 }

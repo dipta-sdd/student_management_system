@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package student_management_system.body;
+package student_management_system.body; 
 
+import javax.swing.*;
 import java.awt.Color;
 import javax.swing.JMenuItem;
 import student_management_system.Server;
@@ -29,8 +30,16 @@ public class course_offer_panel extends javax.swing.JPanel {
         teacher_box.setSelectedItem(null);
     }
     public void reg(String session,String dept,String semester){
-        if(status.isSelected())
-            Server.course_offer_reg(session, dept, semester, code_box.getSelectedItem().toString(), teacher_box.getSelectedItem().toString());
+        if(status.isSelected()){
+            if(Server.course_offer_reg(session, dept, semester, code_box.getSelectedItem().toString(), teacher_box.getSelectedItem().toString())){
+                note.setText("Sucessful");
+                note.setForeground(Color.blue);
+            } else {
+                note.setText("Error");
+                note.setForeground(Color.red);
+            }
+        }
+            
     }
     public void clear(){
         code_box.setSelectedItem(null);
@@ -52,16 +61,17 @@ public class course_offer_panel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        popup = new javax.swing.JPopupMenu();
-        code_box = new javax.swing.JComboBox<>();
-        tittle_box = new javax.swing.JTextField();
-        credit_box = new javax.swing.JTextField();
-        teacher_box = new javax.swing.JComboBox<>();
-        status = new javax.swing.JCheckBox();
+        popup = new JPopupMenu();
+        code_box = new JComboBox<>();
+        tittle_box = new JTextField();
+        credit_box = new JTextField();
+        teacher_box = new JComboBox<>();
+        status = new JCheckBox();
+        note = new JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        code_box.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        code_box.setFont(new java.awt.Font("Monospaced", 1, 18));  
         code_box.setModel(Server.get_course_list(dept));
         code_box.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,21 +84,24 @@ public class course_offer_panel extends javax.swing.JPanel {
             }
         });
 
-        tittle_box.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        tittle_box.setFont(new java.awt.Font("Monospaced", 1, 18));  
         tittle_box.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tittle_boxActionPerformed(evt);
             }
         });
 
-        credit_box.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        credit_box.setFont(new java.awt.Font("Monospaced", 1, 18));  
 
-        teacher_box.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        teacher_box.setFont(new java.awt.Font("Monospaced", 1, 18));  
         teacher_box.setModel(Server.get_table_column("teacher","name"));
 
         status.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        note.setFont(new java.awt.Font("Monospaced", 1, 18));  
+        note.setBorder(null);
+
+        javax.swing.GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,11 +111,13 @@ public class course_offer_panel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(code_box, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tittle_box, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                .addComponent(tittle_box, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(credit_box, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(teacher_box, 0, 298, Short.MAX_VALUE)
+                .addComponent(teacher_box, 0, 249, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(note, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -115,7 +130,8 @@ public class course_offer_panel extends javax.swing.JPanel {
                         .addComponent(code_box, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(tittle_box, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(credit_box, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(teacher_box, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(teacher_box, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(note, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -146,11 +162,12 @@ public class course_offer_panel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> code_box;
-    private javax.swing.JTextField credit_box;
+    JComboBox<String> code_box;
+    JTextField credit_box;
+    JTextField note;
     public javax.swing.JPopupMenu popup;
     private javax.swing.JCheckBox status;
-    private javax.swing.JComboBox<String> teacher_box;
-    private javax.swing.JTextField tittle_box;
+    JComboBox<String> teacher_box;
+    JTextField tittle_box;
     // End of variables declaration//GEN-END:variables
 }

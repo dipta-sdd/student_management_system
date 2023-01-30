@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package student_management_system;
 
 import com.mysql.cj.jdbc.ConnectionImpl;
@@ -9,11 +6,7 @@ import com.mysql.cj.jdbc.StatementImpl;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
-/**
- *
- * @author sdddd
- */
+////if old result is bad it have to be deleted from total gpa
 public class student {
     public String id,name,dept,email,mbl,address,semester,session,password,reg_status;
     public double cgpa,credit,gpa;
@@ -28,7 +21,6 @@ public class student {
     public void add(){
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://sql6.freesqldatabase.com:3306/sql6518757","sql6518757","jXZABmjPLt");
             ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
             String sql="INSERT INTO `student`(`std_id`,`password`, `std_name`, `dept`, `std_cgpa`, `std_credit`, `std_gpa`, `std_mbl`, `std_email`, `std_adrs`,`session`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -52,6 +44,24 @@ public class student {
             status = false;
         }
     }
+    public void update(){
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
+            String sql="UPDATE `student` SET `password`='"+ password +"',`std_name`='"+name+"',`dept`='"+dept+"',`std_cgpa`='"+String.format("%.2f", cgpa)+
+                       "',`std_credit`='"+credit+"',`std_gpa`='"+gpa+"',`std_mbl`='"+mbl+"',`std_email`='"+email+"',`std_adrs`='"+address+
+                    "',`session`='"+session+"',`reg_status`='Approved' WHERE std_id='"+id+"'";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            System.out.println(sql);
+            ps.executeUpdate();
+            System.out.println("updated");
+            status = true;
+        }catch(Exception e){
+            System.out.println("server");
+            System.out.println(e);
+            status = false;
+        }
+    }
     public void update_id(String s_id)
     {
         id=s_id;
@@ -59,16 +69,15 @@ public class student {
         check_server();
     }
     //////////////////////////////
-    void check_server(){
+    public void check_server(){
         System.out.println("check server");
         System.out.println("id  "+id);
         try{
-            
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://sql6.freesqldatabase.com:3306/sql6518757","sql6518757","jXZABmjPLt");
             ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
             StatementImpl st= (StatementImpl)conn.createStatement();
             String sql="select * from student where std_id='" +id +"'";//select * from admin where username='sdd'
+            System.out.println(sql);
             ResultSet rs=st.executeQuery(sql);
             rs.next();
             password=rs.getString("password");
@@ -96,24 +105,55 @@ public class student {
             System.out.println(session);
             System.out.println("sem: "+semester);
             status=true;
-            //System.out.println("name " +name );
-            
         }
         catch(Exception e){
             status=false;
-                    // TODO add your handling code here:
-                //search_std_id.setText("");
         }
     }
-/////////////////////////////////////////
+    double old_result(course crs,String id){
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
+            StatementImpl st= (StatementImpl)conn.createStatement();
+            String sql="select count(*) from result where std_id='" +id +"' and code='"+crs.code+"'";
+            System.out.println(sql);
+            ResultSet rs=st.executeQuery(sql);
+            rs.next();
+            int n=rs.getInt("count(*)");
+            if (n== 0.0){
+                return -1;
+            }
+            System.out.println("n= "+n);
+            double result=0.0d;
+            sql="select * from result where std_id='" +id +"' and code='"+crs.code+"'";
+            System.out.println(sql);
+            rs=st.executeQuery(sql);
+            while(rs.next()){
+                double tmp =rs.getDouble("cgpa");
+                if(tmp>=result)
+                    result=tmp;
+            }
+            return result;
+        } catch(Exception e){
+            return -1;
+        }
+    }
     public void add_result(course crs,String result,String id_p){
         System.out.println("add_result");
         System.out.println("id  "+id);
+        
+        
+        student std = new student(id_p);
+        double crs_credit=Double.parseDouble(crs.credit);
+        double crs_result=Double.parseDouble(result);
+        double result_old=old_result(crs,id_p);
+        System.out.println("old result = "+result_old);
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             //ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://sql6.freesqldatabase.com:3306/sql6518757","sql6518757","jXZABmjPLt");
             ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
-            String sql="INSERT INTO `result`(`std_id`, `code`, `tittle`, `credit`, `cgpa`, `session`) VALUES(?,?,?,?,?,?)";
+            String sql="INSERT INTO `result`(`std_id`, `code`, `tittle`, `credit`, `cgpa`, `session`,`semester`) VALUES(?,?,?,?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, id_p);
             ps.setString(2, crs.code);
@@ -121,13 +161,36 @@ public class student {
             ps.setString(4, crs.credit);
             ps.setString(5,result);
             ps.setString(6, Server.session());
+            ps.setString(7, semester);
             System.out.println(ps);
             ps.executeUpdate();
             System.out.println("added");
+            if(result_old == -1){
+                System.out.println("no old result");
+                std.credit+=crs_credit;
+                std.gpa+=(double)crs_result*crs_credit;
+                std.cgpa=std.gpa/std.credit;
+                System.out.println("crs credit= "+crs_credit);
+                System.out.println("crs result= "+crs_result);
+                System.out.println("cgpa= "+std.cgpa);
+                System.out.println("credit= "+std.credit);
+                System.out.println("gpa= "+std.gpa);
+                std.update();
+            } else if(result_old < crs_result){
+                System.out.println("adding new result");
+                //std.credit+=crs_credit;
+                std.gpa+=(double)crs_result*crs_credit;
+                std.gpa-=(double)result_old*crs_credit;
+                std.cgpa=std.gpa/std.credit;
+                System.out.println("cgpa= "+std.cgpa);
+                System.out.println("credit= "+std.credit);
+                System.out.println("gpa= "+std.gpa);
+                std.update();
+            }
+            else 
+                System.out.println("old result is better");
         }catch(Exception e){
             System.out.println("server error  hh");
         }
     }
-    
-    
 }

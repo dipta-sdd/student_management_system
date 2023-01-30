@@ -6,7 +6,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 public class teacher {
-    
     public String name,username,password,dept,mobile,email,address;
     public boolean status = true;
     public teacher()
@@ -50,7 +49,6 @@ public class teacher {
     public boolean username_available()
     {
         try{
-            
             Class.forName("com.mysql.cj.jdbc.Driver");
             ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
             StatementImpl st= (StatementImpl)conn.createStatement();

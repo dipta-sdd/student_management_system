@@ -9,24 +9,18 @@ import com.mysql.cj.jdbc.StatementImpl;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import javax.swing.JOptionPane;
+import javax.swing.DefaultComboBoxModel;
 
-/**
- *
- * @author sdddd
- */
 public class Server {
     
     public static javax.swing.DefaultComboBoxModel get_semester_list() {
         
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://sql6.freesqldatabase.com:3306/sql6518757","sql6518757","jXZABmjPLt");
             ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
             StatementImpl st= (StatementImpl)conn.createStatement();
-            String sql="select count(*) from semester";//select * from admin where username='sdd'
+            String sql="select count(*) from semester";
             ResultSet rs=st.executeQuery(sql);
-            //while(rs.next()){ // no need while loop cause there are condition in query username='user' 
             rs.next();
                 int x= rs.getInt("count(*)");
             sql="select * from semester";
@@ -35,25 +29,20 @@ public class Server {
             int i=0;
             while(rs.next())
                 result[i++]=rs.getString("dept");
-            
-           // new javax.swing.DefaultComboBoxModel<>(Server.get_dept_list())
-            return new javax.swing.DefaultComboBoxModel<>(result);
+            return new DefaultComboBoxModel<>(result);
         }
         catch(Exception e){
-            return new javax.swing.DefaultComboBoxModel<>(new String[] {"None"});
-            //return ;
+            return new DefaultComboBoxModel<>(new String[] {"None"});
         }
     }
     public static javax.swing.DefaultComboBoxModel get_dept_list() {
         
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://sql6.freesqldatabase.com:3306/sql6518757","sql6518757","jXZABmjPLt");
             ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
             StatementImpl st= (StatementImpl)conn.createStatement();
-            String sql="select count(*) from dept";//select * from admin where username='sdd'
+            String sql="select count(*) from dept";
             ResultSet rs=st.executeQuery(sql);
-            //while(rs.next()){ // no need while loop cause there are condition in query username='user' 
             rs.next();
                 int x= rs.getInt("count(*)");
             sql="select * from dept";
@@ -62,13 +51,10 @@ public class Server {
             int i=0;
             while(rs.next())
                 result[i++]=rs.getString("dept");
-            
-           // new javax.swing.DefaultComboBoxModel<>(Server.get_dept_list())
-            return new javax.swing.DefaultComboBoxModel<>(result);
+            return new DefaultComboBoxModel<>(result);
         }
         catch(Exception e){
-            return new javax.swing.DefaultComboBoxModel<>(new String[] {"None"});
-            //return ;
+            return new DefaultComboBoxModel<>(new String[] {"None"});
         }
     }
     public static javax.swing.DefaultComboBoxModel get_table_list(String table) {
@@ -86,22 +72,19 @@ public class Server {
             int i=0;
             while(rs.next())
                 result[i++]=rs.getString(table);
-            return new javax.swing.DefaultComboBoxModel<>(result);
+            return new DefaultComboBoxModel<>(result);
         }
         catch(Exception e){
-            return new javax.swing.DefaultComboBoxModel<>(new String[] {"None"});
+            return new DefaultComboBoxModel<>(new String[] {"None"});
         }
     } 
     public static javax.swing.DefaultComboBoxModel get_course_list(String dept) {
-        
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://sql6.freesqldatabase.com:3306/sql6518757","sql6518757","jXZABmjPLt");
             ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
             StatementImpl st= (StatementImpl)conn.createStatement();
             String sql="select count(*) from course where dept='"+dept+"'";//select * from admin where username='sdd'
             ResultSet rs=st.executeQuery(sql);
-            //while(rs.next()){ // no need while loop cause there are condition in query username='user' 
             rs.next();
                 int x= rs.getInt("count(*)");
             sql="select * from course where dept='"+dept+"'";
@@ -110,25 +93,20 @@ public class Server {
             int i=0;
             while(rs.next())
                 result[i++]=rs.getString("code");
-            
-           // new javax.swing.DefaultComboBoxModel<>(Server.get_dept_list())
-            return new javax.swing.DefaultComboBoxModel<>(result);
+            return new DefaultComboBoxModel<>(result);
         }
         catch(Exception e){
-            return new javax.swing.DefaultComboBoxModel<>(new String[] {"None"});
-            //return ;
+            return new DefaultComboBoxModel<>(new String[] {"None"});
         }
     }
     public static javax.swing.DefaultComboBoxModel get_table_column(String table,String column) {
         
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://sql6.freesqldatabase.com:3306/sql6518757","sql6518757","jXZABmjPLt");
             ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
             StatementImpl st= (StatementImpl)conn.createStatement();
             String sql="select count(*) from "+table;//select * from admin where username='sdd'
             ResultSet rs=st.executeQuery(sql);
-            //while(rs.next()){ // no need while loop cause there are condition in query username='user' 
             rs.next();
                 int x= rs.getInt("count(*)");
             sql="select * from "+table;
@@ -137,46 +115,37 @@ public class Server {
             int i=0;
             while(rs.next())
                 result[i++]=rs.getString(column);
-            
-           // new javax.swing.DefaultComboBoxModel<>(Server.get_dept_list())
-            return new javax.swing.DefaultComboBoxModel<>(result);
+            return new DefaultComboBoxModel<>(result);
         }
         catch(Exception e){
-            return new javax.swing.DefaultComboBoxModel<>(new String[] {"None"});
-            //return ;
+            return new DefaultComboBoxModel<>(new String[] {"None"});
         }
     }
     public static int get_table_count_where_str1_eq_str2(String table,String str1, String str2) {
         
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://sql6.freesqldatabase.com:3306/sql6518757","sql6518757","jXZABmjPLt");
             ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
             StatementImpl st= (StatementImpl)conn.createStatement();
             String sql="select count(*) from "+table+" where "+str1+"='"+str2+"'";
             ResultSet rs=st.executeQuery(sql);
-            //while(rs.next()){ // no need while loop cause there are condition in query username='user' 
             rs.next();
                 int x= rs.getInt("count(*)");
                 return x;
-   
         }
         catch(Exception e){
             return 0;
-            //return ;
         }
     }
     public static javax.swing.DefaultComboBoxModel get_table_column_where_str1_eq_str2(String table,String column,String str1, String str2) {
         
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://sql6.freesqldatabase.com:3306/sql6518757","sql6518757","jXZABmjPLt");
             ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
             StatementImpl st= (StatementImpl)conn.createStatement();
             String sql="select count(*) from "+table+" where "+str1+"='"+str2+"'";
             System.out.println(sql);
             ResultSet rs=st.executeQuery(sql);
-            //while(rs.next()){ // no need while loop cause there are condition in query username='user' 
             rs.next();
                 int x= rs.getInt("count(*)");
             sql="select * from "+table+" where "+str1+"='"+str2+"'";
@@ -185,25 +154,46 @@ public class Server {
             int i=0;
             while(rs.next())
                 result[i++]=rs.getString(column);
-            
-           // new javax.swing.DefaultComboBoxModel<>(Server.get_dept_list())
-            return new javax.swing.DefaultComboBoxModel<>(result);
+            return new DefaultComboBoxModel<>(result);
         }
         catch(Exception e){
-            return new javax.swing.DefaultComboBoxModel<>(new String[] {"None"});
-            //return ;
+            return new DefaultComboBoxModel<>(new String[] {"None"});
         }
     }
-    public static javax.swing.DefaultComboBoxModel get_table_column_like(String table,String column,String like) {
+    
+    public static javax.swing.DefaultComboBoxModel get_table_column_where_str1_eq_str2andsession(String table,String column,String str1, String str2,String session) {
         
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             //ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://sql6.freesqldatabase.com:3306/sql6518757","sql6518757","jXZABmjPLt");
             ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
             StatementImpl st= (StatementImpl)conn.createStatement();
+            String sql="select count(*) from "+table+" where "+str1+"='"+str2+"' and session='"+session+"'";
+            System.out.println(sql);
+            ResultSet rs=st.executeQuery(sql);
+            rs.next();
+                int x= rs.getInt("count(*)");
+                System.out.println("count "+x);
+            sql="select * from "+table+" where "+str1+"='"+str2+"' and session='"+session+"'";
+            System.out.println(sql);
+            rs=st.executeQuery(sql);
+            String result[]=new String[x];
+            int i=0;
+            while(rs.next())
+                result[i++]=rs.getString(column);
+            return new DefaultComboBoxModel<>(result);
+        }
+        catch(Exception e){
+            return new DefaultComboBoxModel<>(new String[] {"None"});
+        }
+    }
+    public static javax.swing.DefaultComboBoxModel get_table_column_like(String table,String column,String like) {
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
+            StatementImpl st= (StatementImpl)conn.createStatement();
             String sql="select count(*) from "+table+"where "+column+" like '"+like+"%'";//select * from admin where username='sdd'
             ResultSet rs=st.executeQuery(sql);
-            //while(rs.next()){ // no need while loop cause there are condition in query username='user' 
             rs.next();
                 int x= rs.getInt("count(*)");
             sql="select * from "+table;
@@ -212,13 +202,10 @@ public class Server {
             int i=0;
             while(rs.next())
                 result[i++]=rs.getString(column);
-            
-           // new javax.swing.DefaultComboBoxModel<>(Server.get_dept_list())
-            return new javax.swing.DefaultComboBoxModel<>(result);
+            return new DefaultComboBoxModel<>(result);
         }
         catch(Exception e){
-            return new javax.swing.DefaultComboBoxModel<>(new String[] {"None"});
-            //return ;
+            return new DefaultComboBoxModel<>(new String[] {"None"});
         }
     }
     public static String get_std_count() {
@@ -305,7 +292,7 @@ public class Server {
             return 0;
         }
     }
-    public static void course_offer_reg(String session, String dept, String semester,String code , String teacher){
+    public static boolean course_offer_reg(String session, String dept, String semester,String code , String teacher){
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
@@ -316,15 +303,37 @@ public class Server {
             ps.setString(3 ,semester);
             ps.setString(4, code);
             ps.setString(5, teacher);
-
-           // System.out.println(ps);
             ps.executeUpdate();
             System.out.println("Course offered succesfully.");
+            return true;
         }
         catch(Exception e){
             System.out.println("server_error");
+            return false;
         }
     }
+    public static boolean course_reg(student std,String code , String teacher){
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
+            String sql="INSERT INTO `course_current`(`code`, `teacher`, `std_id`, `dept`, `session`, `semester`) VALUES (?,?,?,?,?,?)";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1 ,code );
+            ps.setString(2 ,teacher);
+            ps.setString(3 ,std.id);
+            ps.setString(4, std.dept);
+            ps.setString(5, session());
+            ps.setString(6, std.semester);
+            ps.executeUpdate();
+            System.out.println("Course reg succesfully.");
+            return true;
+        }
+        catch(Exception e){
+            System.out.println("server_error");
+            return false;
+        }
+    }
+    
     public static String get_std_name(String id){
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -344,23 +353,20 @@ public class Server {
             Class.forName("com.mysql.cj.jdbc.Driver");
             ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
             StatementImpl st= (StatementImpl)conn.createStatement();
-            String sql="select count(*) from course_current where code='"+code+"' and teacher='"+teacher+"' and dept='"+dept+"'";//select * from admin where username='sdd'
+            String sql="select count(*) from course_current where code='"+code+"' and teacher='"+teacher+"' and dept='"+dept+"'";// and status='approved'";//select * from admin where username='sdd'
             ResultSet rs=st.executeQuery(sql);
             rs.next();
                 int x= rs.getInt("count(*)");
-            sql="select * from course_current where code='"+code+"' and teacher='"+teacher+"' and dept='"+dept+"'";
+            sql="select * from course_current where code='"+code+"' and teacher='"+teacher+"' and dept='"+dept+"'";// and status='approved'";
             rs=st.executeQuery(sql);
             String result[]=new String[x];
             int i=0;
             while(rs.next())
-                result[i++]=rs.getString("std_id");
-            
-           // new javax.swing.DefaultComboBoxModel<>(Server.get_dept_list())
+                result[i++]=rs.getString("std_id");            
             return result;
         }
         catch(Exception e){
             return new String[] {"None"};
-            //return ;
         }
     }
     public static int get_teacher_couse_count_of_std_id(String teacher,String code,String dept) {
@@ -368,7 +374,7 @@ public class Server {
             Class.forName("com.mysql.cj.jdbc.Driver");
             ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
             StatementImpl st= (StatementImpl)conn.createStatement();
-            String sql="select count(*) from course_current where code='"+code+"' and teacher='"+teacher+"' and dept='"+dept+"'";//select * from admin where username='sdd'
+            String sql="select count(*) from course_current where code='"+code+"' and teacher='"+teacher+"' and dept='"+dept+"' and status='approved'";//select * from admin where username='sdd'
             ResultSet rs=st.executeQuery(sql);
             rs.next();
                 int x= rs.getInt("count(*)");
@@ -384,10 +390,17 @@ public class Server {
             Class.forName("com.mysql.cj.jdbc.Driver");
             ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
             StatementImpl st= (StatementImpl)conn.createStatement();
-            String sql="select * from session where id='0'";//select * from admin where username='sdd'
+            String sql="select count(*) from session";//select * from admin where username='sdd'
             ResultSet rs=st.executeQuery(sql);System.out.println(sql);
+            
             rs.next();
-            return (rs.getString("session"));        
+            int id=rs.getInt("count(*)")-1;
+            String ans="";
+             sql="select * from session where id='"+id+"'";//select * from admin where username='sdd'
+             rs=st.executeQuery(sql);System.out.println(sql);
+            while(rs.next())
+                ans=rs.getString("session");
+            return ans;        
         }
         catch(Exception e){
             return "";
@@ -400,11 +413,11 @@ public class Server {
             Class.forName("com.mysql.cj.jdbc.Driver");
             ConnectionImpl conn=(ConnectionImpl)DriverManager.getConnection("jdbc:mysql://localhost:3306/project_sms","root","2580");
             StatementImpl st= (StatementImpl)conn.createStatement();
-            String sql="select * from session";//select * from admin where username='sdd'
+            String sql="select count(*) from session";//select * from admin where username='sdd'
             System.out.println("sql1  "+sql);
             ResultSet rs=st.executeQuery(sql);
-            while(rs.next())
-                s_id_current=rs.getInt("id");
+            rs.next();
+                s_id_current=rs.getInt("count(*)")-1;
             System.out.println("session id current  "+s_id_current);
             sql="select * from session where session='"+session+"'";
             System.out.println(sql );
@@ -412,7 +425,7 @@ public class Server {
             rs.next();
             s_id_tofind=rs.getInt("id");
             System.out.println("session id to find  "+s_id_tofind);
-            s_id_sem=s_id_tofind-s_id_current+1;
+            s_id_sem=s_id_current-s_id_tofind+1;
             sql="select * from semester where id='"+s_id_sem+"'";
             System.out.println(sql);
              rs=st.executeQuery(sql);System.out.println(sql);
@@ -487,19 +500,15 @@ public class Server {
     public static student admin_login_student(String user, String pass){
         System.out.println("entering admin login student");
         student s=new student(user);
-        //System.out.println("std name "+s.name);
-        //System.out.println("std reg status "+s.reg_status);
-        if(user.equals(s.id) && pass.equals(s.password) && s.reg_status.equals("approved")){
-            //System.out.println("student match");
+        System.out.println("std name "+s.name);
+        System.out.println("std reg status "+s.reg_status);
+        if(user.equals(s.id) && pass.equals(s.password) && s.reg_status.equals("Approved")){
             s.status=true;
-            //System.out.println("returning true");
              return s;
         }
         else 
         {
-            //s=null;
             s.status=false;
-            //System.out.println("returning false");
             return s;
         }
     }
@@ -507,7 +516,6 @@ public class Server {
         user u=new user();
         u.user_student=admin_login_student(user,pass);
         u.user_teacher=admin_login_teacher(user,pass);
-        //System.out.println(u.user_student.status);
         if(admin_login_admin(user,pass)){
             u.status=true;
             u.type="admin";

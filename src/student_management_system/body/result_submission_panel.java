@@ -2,15 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package student_management_system.body;
-
+package student_management_system.body; 
+import javax.swing.*;
 import student_management_system.Server;
 import student_management_system.course;
 import student_management_system.student;
 
 /**
  *
- * @author sdd
+ * @author sdd//old result show
  */
 public class result_submission_panel extends javax.swing.JPanel {
 student std=new student();
@@ -40,9 +40,9 @@ course crs;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        id = new javax.swing.JLabel();
-        name = new javax.swing.JLabel();
-        result = new javax.swing.JTextField();
+        id = new JLabel();
+        name = new JLabel();
+        result = new JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -59,7 +59,7 @@ course crs;
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        javax.swing.GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,8 +91,8 @@ course crs;
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel id;
-    private javax.swing.JLabel name;
-    private javax.swing.JTextField result;
+    JLabel id;
+    JLabel name;
+    JTextField result;
     // End of variables declaration//GEN-END:variables
 }
